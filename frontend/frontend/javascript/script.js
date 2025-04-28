@@ -1,9 +1,3 @@
-
-
-
-
-
-// --- Weather
 function showWeather() {
   const el = document.getElementById('weatherList');
   el.innerHTML = weatherList.map(w => `
@@ -17,7 +11,7 @@ function showWeather() {
   `).join('');
 }
 
-// --- Search functionality
+
 function handleSearch() {
   const input = document.getElementById('locationInput').value.trim();
   const heroResult = document.getElementById('heroResult');
@@ -48,10 +42,10 @@ function detectLocation() {
   }, 900);
 }
 
-// Loader spinner style
+
 document.addEventListener("DOMContentLoaded", () => {
   showWeather();
-  // Loader style
+  
   const style = document.createElement('style');
   style.innerHTML = `
     .loader {
@@ -75,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderNewsCarousel();
 });
 
-/// Carousel statik me HTML
+
 
 let slideIndex = 0;
 const slides = document.querySelectorAll('.carousel-slide');
@@ -94,10 +88,10 @@ function showSlide(idx) {
   slideIndex = idx;
 }
 
-// Inicializim: fsheh të tjerat, tregon vetëm të parën
+
 showSlide(0);
 
-// Butonat
+
 prevBtn.addEventListener('click', () => {
   let idx = (slideIndex - 1 + slides.length) % slides.length;
   showSlide(idx);
@@ -107,19 +101,18 @@ nextBtn.addEventListener('click', () => {
   showSlide(idx);
 });
 
-// Dot-at
+
 dots.forEach((dot, i) => {
   dot.addEventListener('click', () => showSlide(i));
 });
 
-// Opsionale: Auto-slide
+
 setInterval(() => {
   let idx = (slideIndex + 1) % slides.length;
   showSlide(idx);
 }, 6000);
 
 
-// -------------- Newsletter JS --------------
 function subscribeNewsletter(e){
   e.preventDefault();
   const email = document.getElementById('newsletterEmail').value;
@@ -135,7 +128,7 @@ function subscribeNewsletter(e){
   setTimeout(()=>{ msg.innerText=""; },2000);
 }
 
-// -------------- Back to Top --------------
+
 window.onscroll = function() {
   document.getElementById('backToTopBtn').style.display = (window.scrollY > 280) ? 'flex' : 'none';
 }
