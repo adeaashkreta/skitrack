@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather - Ski Track</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    #weather {
+      background-color: #fff;
+      padding: 60px 0;
+      display: none; 
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      border-bottom: 2px solid #0d6efd;
+    }
+
+    .navbar a {
+      color: #0d6efd !important;
+    }
+
+    footer {
+      background-color: #212529;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    footer small {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container nav-flex">
+      <div class="logo d-flex align-items-center">
+        <img src="logo.png" alt="Logo" style="width: 50px; height: 50px;" class="me-2"> Ski Track
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="Resorts.html">Resorts</a></li>
+          <li class="nav-item"><a class="nav-link" href="weather.html">Weather</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Weather Section -->
+  <section id="weather">
+    <div class="container">
+      <h2 class="text-center">Current Ski Conditions</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card p-4 text-center shadow-sm">
+            <h4 id="weather-title">Tirana, Albania</h4>
+            <p id="weather-description">Loading weather...</p>
+            <p id="ski-conditions"></p>
+            <p id="safety-tips" class="safety-tips"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-3 text-center">
+    <div class="container">
+      <small>&copy; 2025 Ski Track. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Weather API Script -->
+  <script>
+    const apiKey = 'YOUR_API_KEY';  // Replace with your OpenWeatherMap API Key
+    const city = 'Tirana';          // City name (can be changed to any ski resort location)
+    const units = 'metric';         // Units for temperature (metric = Celsius)
+
+    // Get weather data from OpenWeatherMap API
+    async function getWeatherData() {
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        // Extract relevant weather data
+        const weather = data.weather[0];
+        const temp = data.main.temp;
+        const description = weather.description;
+        const windSpeed = data.wind.speed;
+        const snow = data.snow ? data.snow["1h"] : 0;  // Snow in the last 1 hour (if available)
+
+        // Update the UI with weather info
+        document.getElementById('weather-title').textContent = `${city} Weather`;
+        document.getElementById('weather-description').textContent = `Conditions: ${description}, Temp: ${temp}°C, Wind Speed: ${windSpeed} m/s`;
+
+        // Check if it's suitable for skiing
+        let skiConditions = '';
+        if (temp <= 0 && snow > 0) {
+          skiConditions = '<span class="suitable-skiing">Great conditions for skiing! Fresh snow is falling.</span>';
+        } else if (temp > 0 && temp <= 5) {
+          skiConditions = '<span class="suitable-skiing">Skiing is possible, but conditions are not ideal. Keep an eye on the snow!</span>';
+        } else {
+          skiConditions = '<span class="not-suitable-skiing">Conditions are not suitable for skiing. Too warm!</span>';
+        }
+        document.getElementById('ski-conditions').innerHTML = skiConditions;
+
+        // Display safety tips based on wind and snow conditions
+        let safetyTips = '';
+        if (windSpeed > 10) {
+          safetyTips = 'Warning: Strong winds, be cautious on high slopes!';
+        } else if (snow > 0) {
+          safetyTips = 'Fresh snow reported! Ensure the slopes are properly groomed for safety.';
+        } else {
+          safetyTips = 'Make sure to check weather updates regularly for safety.';
+        }
+        document.getElementById('safety-tips').textContent = safetyTips;
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+        document.getElementById('weather-description').textContent = "Unable to retrieve weather data.";
+      }
+    }
+
+    // Call the function to get the weather data when the page loads
+    window.onload = getWeatherData;
+  </script>
+</body>
+</html>
