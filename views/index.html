@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ski Track - Find Your Perfect Ski Resort</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="logo">
+        <img src="" alt="Ski Track Logo"/>
+        <span>Ski Track</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Resorts</a></li>
+        <li><a href="#">Weather</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image-container">
+      <img src="MountainBackground.jpg" alt="Ski Mountain" class="hero-img">
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="container hero-content">
+      <h1>Find the Best <span class="accent">Ski Resorts</span> Near You</h1>
+      <p>Search by location or let us auto-detect your position and discover top ski destinations, snow conditions and more!</p>
+      <div class="searchbar">
+        <input id="locationInput" type="text" placeholder="Enter your location..."/>
+        <button onclick="handleSearch()">
+          <span id="searchIcon"><i class="fa fa-search"></i></span> Search
+        </button>
+        <button class="detect-btn" onclick="detectLocation()"><span>📍</span> Auto-detect</button>
+      </div>
+      <div id="heroResult" class="hero-result"></div>
+    </div>
+  </section>
+  
+  <section class="news-carousel-section">
+    <h2 class="carousel-title"><i class="fas fa-newspaper"></i> Latest Ski News</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn prev"><i class="fa fa-chevron-left"></i></button>
+      <div class="carousel-news" id="carouselNews">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Montage Deer Valley: Luxury Year-Round Destination"/>
+          <div class="slide-content">
+            <h3>Montage Deer Valley: Luxury Year-Round Destination</h3>
+            <p>Sponsored by Montage Deer Valley, world-class ski resorts and home to the Greatest Snow on Earth®, Park City, Utah.</p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+          <img src="/views/northA Spring.jpeg"/>
+          <div class="slide-content">
+            <h3>Best Destinations in North America for Spring Skiing</h3>
+            <p>Spring skiing is mainly just in March, with plenty of sun and powder in North America's top resorts.</p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+          <img src="/views/springski.webp"/>
+          <div class="slide-content">
+            <h3>Ski Pass Comparison: Ikon Pass vs. Epic Pass</h3>
+            <p>One of the most frequently asked questions is which ski pass is best. See the full comparison for 2024.</p>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Best Ski Resorts for Mountain Biking"/>
+          <div class="slide-content">
+            <h3>Best Ski Resorts for Mountain Biking</h3>
+            <p>Mountain biking and skiing go hand-in-hand. Explore the best resorts for mountain biking in the off-season!</p>
+          </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1520681732040-fb248b60c2e8?auto=format&fit=crop&w=800&q=80" alt="Users Pick Big Sky as Best Ski Resort 2024-25"/>
+          <div class="slide-content">
+            <h3>Users Pick Big Sky as Best Ski Resort 2024-25</h3>
+            <p>Big Sky Resort voted the top ski resort in North America, based on visitor ratings and user surveys.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="carouselDots">
+      <span class="carousel-dot active"></span>
+      <span class="carousel-dot"></span>
+      <span class="carousel-dot"></span>
+      <span class="carousel-dot"></span>
+      <span class="carousel-dot"></span>
+    </div>
+  </section>
+  
+<!-- Activities Section -->
+<section class="section activities-section">
+  <div class="container">
+    <h2>Explore Activities</h2>
+    <div class="activity-cards">
+      <div class="activity-card">
+        <span><i class="fas fa-snowboarding"></i> Snowboarding</span>
+      </div>
+      <div class="activity-card">
+        <span><i class="fas fa-person-skiing"></i> Ski Lessons</span>
+      </div>
+      <div class="activity-card">
+        <span><i class="fas fa-children"></i> Family Fun</span>
+      </div>
+      <div class="activity-card">
+        <span><i class="fas fa-champagne-glasses"></i> Après Ski</span>
+      </div>
+      <div class="activity-card">
+        <span><i class="fas fa-calendar-star"></i> Events</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trending Resorts Section -->
+<section class="section top-resorts-section">
+  <div class="top-resorts-container">
+    <h2>Worldwide: Best Ski Resorts</h2>
+    <div class="resort-cards">
+      <!-- Resort 1 -->
+      <div class="resort-card">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Val Thorens"/>
+        <div class="resort-info">
+          <div class="resort-title">Val Thorens</div>
+          <div class="resort-meta">France &nbsp; | &nbsp; Lifts: 32</div>
+          <div class="resort-meta">Snow: Powder &nbsp; | &nbsp; €75 / day</div>
+          <div class="resort-rating">⭐ 4.8</div>
+        </div>
+      </div>
+      <!-- Resort 2 -->
+      <div class="resort-card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80" alt="Zermatt"/>
+        <div class="resort-info">
+          <div class="resort-title">Zermatt</div>
+          <div class="resort-meta">Switzerland &nbsp; | &nbsp; Lifts: 52</div>
+          <div class="resort-meta">Snow: Excellent &nbsp; | &nbsp; €92 / day</div>
+          <div class="resort-rating">⭐ 4.9</div>
+        </div>
+      </div>
+      <!-- Resort 3 -->
+      <div class="resort-card">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Aspen Snowmass"/>
+        <div class="resort-info">
+          <div class="resort-title">Aspen Snowmass</div>
+          <div class="resort-meta">USA &nbsp; | &nbsp; Lifts: 41</div>
+          <div class="resort-meta">Snow: Fresh &nbsp; | &nbsp; €180 / day</div>
+          <div class="resort-rating">⭐ 4.7</div>
+        </div>
+      </div>
+      <!-- Resort 4 -->
+      <div class="resort-card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Cortina d'Ampezzo"/>
+        <div class="resort-info">
+          <div class="resort-title">Cortina d'Ampezzo</div>
+          <div class="resort-meta">Italy &nbsp; | &nbsp; Lifts: 34</div>
+          <div class="resort-meta">Snow: Packed &nbsp; | &nbsp; €88 / day</div>
+          <div class="resort-rating">⭐ 4.6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<section class="section weather-section">
+  <div class="weather-container">
+    <h2>Current Mountain Weather</h2>
+    <div class="weather-cards">
+      <div class="weather-card">
+        <div class="weather-card-location">Brezovica</div>
+        <div class="weather-card-cond">☀️ Sunny</div>
+        <div class="weather-card-temp">-3°C</div>
+        <div class="weather-card-snow">Snow: Good</div>
+        <div class="weather-card-wind">Wind: Light</div>
+      </div>
+      <div class="weather-card">
+        <div class="weather-card-location">St. Moritz</div>
+        <div class="weather-card-cond">🌨️ Snow Showers</div>
+        <div class="weather-card-temp">-1°C</div>
+        <div class="weather-card-snow">Snow: Fresh</div>
+        <div class="weather-card-wind">Wind: Moderate</div>
+      </div>
+      <div class="weather-card">
+        <div class="weather-card-location">Cortina d'Ampezzo</div>
+        <div class="weather-card-cond">☁️ Cloudy</div>
+        <div class="weather-card-temp">2°C</div>
+        <div class="weather-card-snow">Snow: Packed</div>
+        <div class="weather-card-wind">Wind: Light</div>
+      </div>
+      <div class="weather-card">
+        <div class="weather-card-location">Zermatt</div>
+        <div class="weather-card-cond">🌬️ Windy</div>
+        <div class="weather-card-temp">0°C</div>
+        <div class="weather-card-snow">Snow: Excellent</div>
+        <div class="weather-card-wind">Wind: Strong</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section testimonials-section">
+  <div class="testimonials-container">
+    <h2>What Our Users Say</h2>
+    <div class="testimonials-cards">
+      <div class="testimonials-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User 1" class="testimonials-img">
+        <blockquote>"Found the perfect resort with fresh snow thanks to Ski Track! Very easy to use and up to date."</blockquote>
+        <span>- John, Austria</span>
+      </div>
+      <div class="testimonials-card">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User 2" class="testimonials-img">
+        <blockquote>"I loved the weather updates. Helped me plan a great family ski trip."</blockquote>
+        <span>- Maria, Switzerland</span>
+      </div>
+      <div class="testimonials-card">
+        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="User 3" class="testimonials-img">
+        <blockquote>"Best platform for ski lovers, with trending news and all the details about resorts!"</blockquote>
+        <span>- Luca, Italy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  <div class="footer-flex">
+    <!-- Left: Copyright -->
+    <span class="footer-left">
+      © 2024 Ski Track. All rights reserved.
+    </span>
+
+    <!-- Center: Newsletter -->
+    <section class="newsletter-section">
+      <div class="newsletter-container">
+        <h3>Subscribe to our Ski Track Newsletter</h3>
+        <form id="newsletterForm" onsubmit="subscribeNewsletter(event)">
+          <input type="email" id="newsletterEmail" placeholder="Your email address..." required>
+          <button type="submit"><i class="fas fa-envelope"></i> Subscribe</button>
+        </form>
+        <div class="newsletter-message" id="newsletterMessage"></div>
+      </div>
+    </section>
+
+    <!-- Right: Social Icons -->
+    <span class="footer-right">
+      <a href="https://www.facebook.com/" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://x.com/" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://al.linkedin.com/" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </span>
+  </div>
+</footer>
+
+  
+
+  <!-- Back to Top Button -->
+  <button onclick="scrollToTop()" class="back-to-top" id="backToTopBtn" title="Go to top">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
