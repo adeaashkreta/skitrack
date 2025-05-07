@@ -13,6 +13,10 @@ body, html {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: var(--background);
 }
+
+.highlight {
+  color: var(--accent);
+}
 .section-block {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -41,8 +45,12 @@ body, html {
 }
 
 .nav-flex {
-  display: flex; align-items: center; justify-content: space-between;
-  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 .logo {
   display: flex; align-items: center; font-size: 1.38em; font-weight: bold;
@@ -59,7 +67,6 @@ body, html {
   padding: 8px 0;
 }
 .nav-links li a:hover { color: var(--accent); }
-
 /* Hero Section */
 .hero {
   position: relative;
@@ -72,6 +79,13 @@ body, html {
   flex-direction: column;
   justify-content: center;
   text-align: center
+}
+.location-input {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
 }
 .hero-image-container {
   position: absolute;
@@ -104,6 +118,15 @@ body, html {
   text-align: center;
   padding: 80px 0 50px 0;
 }
+.search-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .hero h1 {
   font-size: 2.5em; font-weight: bold;
   margin-bottom: 13px;
@@ -143,9 +166,32 @@ body, html {
   min-height: 28px;
   font-size: 1.1em;
 }
+/* Hero Resorts Section */
+
 
 
 /* Top Resorts */
+
+/* Resort Filter UI */
+.resort-filters {
+  padding-top: 2rem;
+}
+
+.filter-controls button {
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  transition: transform 0.2s ease;
+  border-radius: 50px;
+}
+
+.filter-controls {
+  padding-bottom: 25px;
+}
+
+.filter-controls button:hover {
+  transform: scale(1.05);
+}
+
 .fullwidth-resorts {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -178,7 +224,7 @@ body, html {
 .top-resorts-container {
   max-width: 1400px;
   background: #fafdff;
-  padding: 10px 0 36px 0;
+  padding: 0px 0 36px 0;
   margin-top: -50px;
 }
 .top-resorts h2 {
@@ -327,6 +373,20 @@ body, html {
 
 
 /* ========== Activities Section ========== */
+/* Buttons for activities */
+.activity-btn {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.activity-btn:hover {
+  background-color: var(--gray);
+}
 .activities-section {
   background: #f3f7fa;
   padding: 44px 0 50px 0;
@@ -377,7 +437,7 @@ body, html {
 /* ========== Trending Resorts Section ========== */
 .top-resorts-section {
   background: #fafdff;
-  padding: 38px 0 36px 0;
+  padding: 20px 0 36px 0;
 }
 .top-resorts-container {
   max-width: 1400px;
@@ -386,7 +446,7 @@ body, html {
 .top-resorts-container h2 {
   color: #2f436e;
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
   font-size: 2em;
   font-weight: 700;
 }
@@ -731,7 +791,7 @@ body, html {
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
   
   .section-heading::after {
@@ -807,7 +867,10 @@ body, html {
     color: #2f436e;
   }
   
-
+/* Footer Resorts Page */
+.container footer{
+  width: 100%;
+}
 
 footer {
   background: var(--primary);

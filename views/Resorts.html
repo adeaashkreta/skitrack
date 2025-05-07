@@ -64,7 +64,7 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container nav-flex">
       <div class="logo d-flex align-items-center">
-        <img src="../images/logo.png" alt="Ski Track Logo" class="img-fluid" style="width: 80px; height: 80px;">
+        <img src="../views/../images/logo.png" alt="Ski Track Logo" class="img-fluid" style="width: 80px; height: 80px;" />
         <span>Ski Track</span>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -72,8 +72,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav-links navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="Resorts.html">Resorts</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="Resorts.html">Resorts</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Weather</a></li>
           <li class="nav-item"><a class="nav-link" href="#">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
@@ -81,23 +81,42 @@
       </div>
     </div>
   </nav>
+  
 
   <!-- Hero Section -->
   <section class="hero position-relative">
     <div class="hero-image-container">
-      <img src="../images/Containerslopes.jpg" alt="Ski Resorts" class="hero-img">
+      <img src="../images/hero.jpg" alt="Ski Mountain" class="hero-img">
       <div class="hero-gradient"></div>
     </div>
     <div class="container hero-content py-5">
-      <h1>Discover <span class="accent">Amazing Resorts</span></h1>
-      <p>Explore the best ski resorts around the world for your perfect winter getaway!</p>
+      <h1>Find the Best <span class="highlight">Ski Resorts</span> Near You</h1>
+      <p>Search by location or let us auto-detect your position and discover top ski destinations, snow conditions and more!</p>
+      <div class="search-container mt-4 d-flex justify-content-center gap-2 flex-wrap">
+        <input type="text" placeholder="Enter your location..." class="form-control location-input" />
+        <button class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+        <button class="btn btn-info"><i class="fas fa-map-marker-alt"></i> Auto-detect</button>
+      </div>
+      <div id="heroResult" class="hero-result"></div>
     </div>
   </section>
+  
+  
 
   <!-- Resorts List -->
-  <section class="section top-resorts-section py-5">
-    <div class="container top-resorts-container">
-      <h2>Top Resorts</h2>
+  <section class="top-resorts-section fullwidth-resorts section-block">
+    <div class="top-resorts-container px-5">
+      <!-- Resort Filters Section -->
+<section class="resort-filters text-center mb-4">
+  <h2 class="section-heading">Top Resorts</h2>
+  <div class="filter-controls d-flex flex-wrap justify-content-center gap-2 mt-3">
+    <button class="btn btn-outline-primary">All</button>
+    <button class="btn btn-outline-secondary">Top Rated</button>
+    <button class="btn btn-outline-info">Budget Friendly</button>
+    <button class="btn btn-outline-success">Family Friendly</button>
+    <button class="btn btn-outline-warning">Snow Guarantee</button>
+  </div>
+</section>
       <div class="row resort-cards g-4">
 
         <!-- Resort Card 1 -->
@@ -199,37 +218,95 @@
               </div>
             </div>
           </div>
-
-      </div>
-
-      <!-- Resort Features -->
-      <div class="mt-5">
-        <h3 class="text-center mb-4">Why Choose Our Resorts?</h3>
-        <div class="row text-center">
-          <div class="col-md-4 mb-4">
-            <i class="fas fa-skiing fa-3x text-primary mb-3"></i>
-            <h5>Best Skiing Terrain</h5>
-            <p>From beginners to experts, enjoy perfectly groomed trails and adventurous off-piste slopes.</p>
-          </div>
-          <div class="col-md-4 mb-4">
-            <i class="fas fa-hotel fa-3x text-primary mb-3"></i>
-            <h5>Luxury Lodging</h5>
-            <p>Experience world-class hotels, cozy cabins, and mountain lodges for ultimate relaxation.</p>
-          </div>
-          <div class="col-md-4 mb-4">
-            <i class="fas fa-snowflake fa-3x text-primary mb-3"></i>
-            <h5>Perfect Snow</h5>
-            <p>Our resorts are renowned for pristine snow conditions throughout the season.</p>
+                  <!-- Resort Card 6 -->
+        <div class="col-md-3">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/ValThorens.jpg" alt="Val Thorens" class="img-fluid rounded">
+                <div class="resort-info text-center p-2">
+                  <div class="resort-title">Val Thorens</div>
+                  <div class="resort-meta">France | 2,300m</div>
+                  <div class="resort-rating">4.8 ⭐</div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <h5>Val Thorens</h5>
+                <p>Europe's highest resort, perfect for powder and nightlife lovers!</p>
+              </div>
+            </div>
           </div>
         </div>
+
+      </div>
+</div>
+</section>
+      <!-- Resort Features -->
+ <section class="section testimonials-section">
+    <h2 class="section-heading">What Our Users Say</h2>
+  
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">
+          <img src="../views/../images/user1.jpg" alt="John">
+        </div>
+        <p class="testimonial-quote">"Found the perfect resort with fresh snow thanks to Ski Track! Very easy to use and up to date."</p>
+        <p class="testimonial-author">– John, Austria</p>
+      </div>
+  
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">
+          <img src="../views/../images/user2.jpg" alt="John">
+        </div>
+        <p class="testimonial-quote">"I loved the weather updates. Helped me plan a great family ski trip."</p>
+        <p class="testimonial-author">- Maria, Switzerland</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">
+          <img src="../views/../images/user3.jpg" alt="John">
+        </div>
+        <p class="testimonial-quote">"Best platform for ski lovers, with trending news and all the details about resorts!"</p>
+        <p class="testimonial-author">- Luca, Italy</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-4 bg-light">
-    <p>&copy; 2025 Ski Track. All rights reserved.</p>
+  <footer class="footer bg-dark text-light py-4">
+    <div class="container footer-flex d-flex flex-column flex-md-row justify-content-between align-items-center">
+      
+      <span class="footer-left mb-2 mb-md-0">
+        © 2024 Ski Track. All rights reserved.
+      </span>
+      
+      <section class="newsletter-section mb-2 mb-md-0">
+        <div class="newsletter-container">
+          <h3 class="h6">Subscribe to our Ski Track Newsletter</h3>
+          <form id="newsletterForm" class="d-flex" onsubmit="subscribeNewsletter(event)">
+            <input type="email" id="newsletterEmail" class="form-control me-2" placeholder="Your email address..." required>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-envelope"></i> Subscribe</button>
+          </form>
+          <div class="newsletter-message" id="newsletterMessage"></div>
+        </div>
+      </section>
+      
+      <span class="footer-right">
+        <a href="https://www.facebook.com/" target="_blank" class="text-light me-2">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="text-light me-2">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/" target="_blank" class="text-light me-2">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://al.linkedin.com/" target="_blank" class="text-light">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </span>
+    </div>
   </footer>
+  
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -240,5 +317,10 @@
       });
     });
   </script>
+  <!-- Behave -->
+<button onclick="scrollToTop()" class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow" id="backToTopBtn" title="Go to top">
+  <i class="fa fa-chevron-up"></i>
+</button>
+
 </body>
 </html>
