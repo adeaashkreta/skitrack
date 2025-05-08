@@ -55,7 +55,7 @@
   </section>
   
   
-  <section class="news-carousel-section py-5">
+<!--  <section class="news-carousel-section py-5">
     <div class="container">
       <h2 class="carousel-title mb-4"><i class="fas fa-newspaper"></i> Latest Ski News</h2>
       <div class="carousel-container d-flex align-items-center">
@@ -113,9 +113,9 @@
       </div>
     </div>
   </section>
+  -->
   
-  
-  <section class="section activities-section py-5">
+  <section class="section activities-section section-block">
     <div class="container">
       <h2>Explore Activities</h2>
       <div class="row activity-cards g-3">
@@ -140,12 +140,12 @@
     </div>
   </section>
 
-  
-  <section class="section top-resorts-section py-5 bg-light">
-    <div class="container top-resorts-container">
+  <div class="fullwidth-resorts bg-eliminate">
+    <section class="top-resorts-section fullwidth-resorts section-block">
+    <div class="top-resorts-container px-5">
       <h2>Worldwide: Best Ski Resorts</h2>
       <div class="row resort-cards g-4">
-        <div class="col-md-3 resort-card">
+        <div class="resort-card">
           <img src="../views/../images/france.webp" alt="Val Thorens"/>
           <div class="resort-info">
             <div class="resort-title">Val Thorens</div>
@@ -184,12 +184,12 @@
       </div>
     </div>
   </section>
+</div>
   
-  
-  <section class="section weather-section py-5">
+<section class="section weather-section section-block">
     <div class="container weather-container">
       <h2>Current Mountain Weather</h2>
-      <div class="row weather-cards g-4">
+    <!-- <div class="row weather-cards g-4">
         <div class="col-md-3 weather-card">
           <div class="weather-card-location">Brezovica</div>
           <div class="weather-card-cond">☀️ Sunny</div>
@@ -220,28 +220,65 @@
         </div>
       </div>
     </div>
+    -->
+    <div class="weather-layout">
+      <div class="weather-map-container">
+        <img src="../views/../images/europe-map.png" class="weather-map">
+        <!-- pins here -->
+      </div>
+    
+      <div class="sidebar-wrapper">
+        <div class="weather-sidebar">
+          <h3>Today's Highlights</h3>
+          <ul>
+            <li>❄️ Coldest: Zermatt – -5°C</li>
+            <li>🌬 Windiest: St. Moritz – Strong</li>
+            <li>☀️ Sunniest: Brezovica</li>
+          </ul>
+        </div>
+    
+        <div class="weather-sidebar secondary">
+          <h3>Our Top Picks for the Week</h3>
+          <ul>
+            <li>⛷ Zermatt – Excellent snow & sunny</li>
+            <li>🏔 St. Moritz – Fresh powder & events</li>
+            <li>🎿 Brezovica – Great for beginners</li>
+            <li>🏔 Lorem Ipsum – Great for Intermidiate</li>
+            <li>⛷ Lorem Ipsum – Excellent snow conditions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+    
   </section>
 
+  <section class="section testimonials-section">
+    <h2 class="section-heading">What Our Users Say</h2>
   
-  <section class="section testimonials-section py-5">
-    <div class="container testimonials-container">
-      <h2>What Our Users Say</h2>
-      <div class="row testimonials-cards g-4">
-        <div class="col-md-4 testimonials-card">
-          <img src="../views/../images/user1.jpg" alt="User 1" class="testimonials-img">
-          <blockquote>"Found the perfect resort with fresh snow thanks to Ski Track! Very easy to use and up to date."</blockquote>
-          <span>- John, Austria</span>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">
+          <img src="../views/../images/user1.jpg" alt="John">
         </div>
-        <div class="col-md-4 testimonials-card">
-          <img src="../views/../images/user2.jpg" alt="User 2" class="testimonials-img">
-          <blockquote>"I loved the weather updates. Helped me plan a great family ski trip."</blockquote>
-          <span>- Maria, Switzerland</span>
+        <p class="testimonial-quote">"Found the perfect resort with fresh snow thanks to Ski Track! Very easy to use and up to date."</p>
+        <p class="testimonial-author">– John, Austria</p>
+      </div>
+  
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">
+          <img src="../views/../images/user2.jpg" alt="John">
         </div>
-        <div class="col-md-4 testimonials-card">
-          <img src="../views/../images/user3.jpg" alt="User 3" class="testimonials-img">
-          <blockquote>"Best platform for ski lovers, with trending news and all the details about resorts!"</blockquote>
-          <span>- Luca, Italy</span>
+        <p class="testimonial-quote">"I loved the weather updates. Helped me plan a great family ski trip."</p>
+        <p class="testimonial-author">- Maria, Switzerland</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">
+          <img src="../views/../images/user3.jpg" alt="John">
         </div>
+        <p class="testimonial-quote">"Best platform for ski lovers, with trending news and all the details about resorts!"</p>
+        <p class="testimonial-author">- Luca, Italy</p>
       </div>
     </div>
   </section>
