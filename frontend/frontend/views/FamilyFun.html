@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ski Track - Weather</title>
-  <!-- Bootstrap 5 -->
+  <title>Family Fun - Ski Track</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-  <!-- Project CSS -->
   <link rel="stylesheet" href="../css/style.css"/>
   <style>
-    .weather-hero {
-      background: url('../images/weather-hero.jpg') center/cover no-repeat;
-      position: relative;
-      height: 350px;
+    .hero-family {
+      background: url('../images/family-hero.jpg') center/cover no-repeat;
+      color: white;
+      height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      position: relative;
+      text-align: center;
     }
-
-    .weather-hero::after {
+    .hero-family::after {
       content: '';
       position: absolute;
       inset: 0;
       background: rgba(0,0,0,0.4);
     }
-
-    .weather-hero .container {
-      position: relative;
+    .hero-family .container {
       z-index: 1;
+      position: relative;
     }
-
-    .weather-cards .card {
-      border: none;
+    .fun-card {
+      background: white;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
-    }
-
-    .weather-cards .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .forecast-item {
-      background-color: #f0f4f8;
-      border-radius: 10px;
-      padding: 15px;
       text-align: center;
-      margin-top: 10px;
     }
-
-    .forecast-item h6 {
-      font-weight: bold;
-      color: #004b8d;
+    .fun-card:hover {
+      transform: translateY(-8px);
+    }
+    .fun-card i {
+      font-size: 2rem;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+    .testimonial {
+      background: #f8f9fa;
+      border-left: 4px solid #007bff;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .testimonial p {
+      margin-bottom: 5px;
     }
   </style>
 </head>
@@ -66,21 +62,20 @@
     <div class="container nav-flex">
       <div class="logo d-flex align-items-center">
         <a href="index.html">
-          <img src="../views/../images/logo.png" alt="Ski Track Logo" class="img-fluid" style="width: 80px; height: 80px;" />
-        </a>        
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-          <span>Ski Track</span>
-        </a>        
+            <img src="../views/../images/logo.png" alt="Ski Track Logo" class="img-fluid" style="width: 80px; height: 80px;" />
+          </a>        
+          <a href="index.html" style="text-decoration: none; color: inherit;">
+            <span>Ski Track</span>
+          </a>        
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav-links navbar-nav ms-auto">
-          <ul class="nav-links navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="Resorts.html">Resorts</a></li>
-            <li class="nav-item"><a class="nav-link active " href="weather.html" id="weather-link">Weather</a></li>
+            <li class="nav-item"><a class="nav-link " href="weather.html" id="weather-link">Weather</a></li>
             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
         </ul>
@@ -88,57 +83,74 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="weather-hero">
-    <div class="container text-center">
-      <h1 class="display-4 fw-bold">Mountain Weather & Conditions</h1>
-      <p class="lead">Stay ahead of the snow with the latest forecasts and lift updates.</p>
+  <!-- Hero Section -->
+  <section class="hero-family">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Unforgettable Fun for the Whole Family</h1>
+      <p class="lead">From ski schools to snow tubing, discover the joy of winter together.</p>
     </div>
   </section>
 
-  <!-- Conditions -->
-  <section class="container my-5 weather-cards">
-    <div class="row g-4 text-center">
+  <!-- Activities -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Family Activities</h2>
+    <div class="row g-4">
       <div class="col-md-4">
-        <div class="card p-4">
-          <i class="fas fa-cloud-snow fa-2x text-primary mb-2"></i>
-          <h5>Snow Condition</h5>
-          <p id="snowDesc">Loading...</p>
+        <div class="fun-card">
+          <i class="fas fa-child"></i>
+          <h5>Kids' Ski School</h5>
+          <p>Professional instructors help your little ones learn in a fun & safe way.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-4">
-          <i class="fas fa-temperature-low fa-2x text-danger mb-2"></i>
-          <h5>Temperature</h5>
-          <p id="temperature">Loading...</p>
+        <div class="fun-card">
+          <i class="fas fa-sleigh"></i>
+          <h5>Sledding Hills</h5>
+          <p>Enjoy family races or casual slides down our safe snow-covered slopes.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-4">
-          <i class="fas fa-cable-car fa-2x text-success mb-2"></i>
-          <h5>Lift Status</h5>
-          <p id="liftStatus">Loading...</p>
+        <div class="fun-card">
+          <i class="fas fa-mug-hot"></i>
+          <h5>Hot Cocoa Lounge</h5>
+          <p>Warm up with delicious drinks and snacks after your snowy adventures.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="fun-card">
+          <i class="fas fa-snowman"></i>
+          <h5>Snowman Building</h5>
+          <p>Free snowman kits available at our activity station – get creative!</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="fun-card">
+          <i class="fas fa-campground"></i>
+          <h5>Family Campfires</h5>
+          <p>Cozy up by the fire and enjoy marshmallows under the stars.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="fun-card">
+          <i class="fas fa-gamepad"></i>
+          <h5>Indoor Game Zone</h5>
+          <p>Perfect for evening fun with ping pong, foosball, and creative crafts.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Forecast -->
-  <section class="container mb-5">
-    <h3 class="text-center mb-4">3-Day Snow Forecast</h3>
-    <div class="row justify-content-center">
-      <div class="col-md-3 forecast-item">
-        <h6>Today</h6>
-        <p id="day1">Loading...</p>
-      </div>
-      <div class="col-md-3 forecast-item">
-        <h6>Tomorrow</h6>
-        <p id="day2">Loading...</p>
-      </div>
-      <div class="col-md-3 forecast-item">
-        <h6>+2 Days</h6>
-        <p id="day3">Loading...</p>
-      </div>
+  <!-- Testimonials -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">What Families Are Saying</h2>
+    <div class="testimonial">
+      <p>"My kids absolutely loved the ski school! Safe, fun, and memorable." – Laura, Albania</p>
+    </div>
+    <div class="testimonial">
+      <p>"We’ve never had so much fun together – sledding was a hit!" – Erion, Kosovo</p>
+    </div>
+    <div class="testimonial">
+      <p>"The hot cocoa lounge was our favorite spot every evening!" – Fatmira, Macedonia</p>
     </div>
   </section>
 
@@ -183,17 +195,7 @@
     <i class="fa fa-chevron-up"></i>
   </button>
 
-  <!-- Bootstrap JS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById("snowDesc").innerText = "Fresh powder, great for skiing";
-      document.getElementById("temperature").innerText = "-4°C (feels like -7°C)";
-      document.getElementById("liftStatus").innerText = "13 out of 15 lifts operational";
-      document.getElementById("day1").innerText = "🌨️ Snow showers, -2°C / -7°C";
-      document.getElementById("day2").innerText = "☁️ Cloudy, -1°C / -5°C";
-      document.getElementById("day3").innerText = "☀️ Clear, 2°C / -1°C";
-    });
-  </script>
 </body>
 </html>
