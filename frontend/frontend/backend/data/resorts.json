@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "val-thorens-france",
+    "name": "Val Thorens, France",
+    "lat": 45.2979109,
+    "lon": 6.5822693,
+    "price": 214,
+    "rating": "4.9",
+    "description": "Panoramic views and legendary après-ski.",
+    "image": "val-thorens-france.jpg"
+  },
+  {
+    "id": "val-d-is-re-france",
+    "name": "Val d'Isère, France",
+    "lat": 45.449556,
+    "lon": 6.9787389,
+    "price": 82,
+    "rating": "4.2",
+    "description": "Perfectly groomed runs for the whole family.",
+    "image": "val-d-is-re-france.jpg"
+  },
+  {
+    "id": "courchevel-france",
+    "name": "Courchevel, France",
+    "lat": 45.4140984,
+    "lon": 6.6349892,
+    "price": 196,
+    "rating": "4.2",
+    "description": "Powder paradise with modern high-speed lifts.",
+    "image": "courchevel-france.jpg"
+  },
+  {
+    "id": "meribel-france",
+    "name": "Meribel, France",
+    "lat": 45.4079499,
+    "lon": 6.5773335,
+    "price": 180,
+    "rating": "4.9",
+    "description": "Affordable comfort and picturesque slopes.",
+    "image": "meribel-france.jpg"
+  },
+  {
+    "id": "tignes-france",
+    "name": "Tignes, France",
+    "lat": 45.4697293,
+    "lon": 6.907594,
+    "price": 164,
+    "rating": "5.0",
+    "description": "Five-star spa and Michelin-rated dining.",
+    "image": "tignes-france.jpg"
+  },
+  {
+    "id": "les-arcs-france",
+    "name": "Les Arcs, France",
+    "lat": 43.4629097,
+    "lon": 6.4786269,
+    "price": 257,
+    "rating": "4.5",
+    "description": "Challenging black runs for advanced skiers and boarders.",
+    "image": "les-arcs-france.jpg"
+  },
+  {
+    "id": "la-plagne-france",
+    "name": "La Plagne, France",
+    "lat": 45.5042986,
+    "lon": 6.7049123,
+    "price": 151,
+    "rating": "4.0",
+    "description": "Cozy chalet vibes with wood-burning fireplaces.",
+    "image": "la-plagne-france.jpg"
+  },
+  {
+    "id": "les-deux-alpes-france",
+    "name": "Les Deux Alpes, France",
+    "lat": 45.0099949,
+    "lon": 6.1237609,
+    "price": 269,
+    "rating": "4.2",
+    "description": "Award-winning ski school and family-friendly programs.",
+    "image": "les-deux-alpes-france.jpg"
+  },
+  {
+    "id": "alpe-d-huez-france",
+    "name": "Alpe d'Huez, France",
+    "lat": 45.092401,
+    "lon": 6.0699443,
+    "price": 105,
+    "rating": "4.2",
+    "description": "Serene off-piste areas for backcountry enthusiasts.",
+    "image": "alpe-d-huez-france.jpg"
+  },
+  {
+    "id": "chamonix-france",
+    "name": "Chamonix, France",
+    "lat": 45.9246705,
+    "lon": 6.8727506,
+    "price": 286,
+    "rating": "4.0",
+    "description": "Luxury ski-in/ski-out accommodations with mountain views.",
+    "image": "chamonix-france.jpg"
+  },
+  {
+    "id": "avoriaz-france",
+    "name": "Avoriaz, France",
+    "lat": 46.1925439,
+    "lon": 6.7702857,
+    "price": 199,
+    "rating": "4.7",
+    "description": "World-class snowpark features and freestyle terrain.",
+    "image": "avoriaz-france.jpg"
+  },
+  {
+    "id": "morzine-france",
+    "name": "Morzine, France",
+    "lat": 46.1799561,
+    "lon": 6.7091057,
+    "price": 157,
+    "rating": "4.7",
+    "description": "Traditional alpine culture and lively village atmosphere.",
+    "image": "morzine-france.jpg"
+  },
+  {
+    "id": "les-gets-france",
+    "name": "Les Gets, France",
+    "lat": 46.1550977,
+    "lon": 6.6633354,
+    "price": 233,
+    "rating": "4.0",
+    "description": "Panoramic gondola rides to breathtaking summit vistas.",
+    "image": "les-gets-france.jpg"
+  },
+  {
+    "id": "st-anton-am-arlberg-austria",
+    "name": "St. Anton am Arlberg, Austria",
+    "lat": 47.1288996,
+    "lon": 10.2663669,
+    "price": 290,
+    "rating": "4.3",
+    "description": "Night skiing under floodlights and vibrant nightlife.",
+    "image": "st-anton-am-arlberg-austria.jpg"
+  },
+  {
+    "id": "ischgl-austria",
+    "name": "Ischgl, Austria",
+    "lat": 47.0120228,
+    "lon": 10.2913166,
+    "price": 114,
+    "rating": "4.2",
+    "description": "Guided glacier tours and year-round ski opportunities.",
+    "image": "ischgl-austria.jpg"
+  },
+  {
+    "id": "kitzb-hel-austria",
+    "name": "Kitzbühel, Austria",
+    "lat": 47.4463585,
+    "lon": 12.3911473,
+    "price": 130,
+    "rating": "4.6",
+    "description": "Scenic cross-country trails through frosted forests.",
+    "image": "kitzb-hel-austria.jpg"
+  },
+  {
+    "id": "s-lden-austria",
+    "name": "Sölden, Austria",
+    "lat": 46.9673961,
+    "lon": 11.0070193,
+    "price": 253,
+    "rating": "4.2",
+    "description": "Renowned heli-skiing helipad for adventurous runs.",
+    "image": "s-lden-austria.jpg"
+  },
+  {
+    "id": "zell-am-see-austria",
+    "name": "Zell am See, Austria",
+    "lat": 47.3239636,
+    "lon": 12.7963165,
+    "price": 87,
+    "rating": "4.5",
+    "description": "Snowshoe and winter hiking routes for nature lovers.",
+    "image": "zell-am-see-austria.jpg"
+  },
+  {
+    "id": "lech-z-rs-austria",
+    "name": "Lech Zürs, Austria",
+    "lat": 47.1930973,
+    "lon": 10.1464213,
+    "price": 204,
+    "rating": "4.8",
+    "description": "Ice-skating rink and dog-sled excursions in resort center.",
+    "image": "lech-z-rs-austria.jpg"
+  },
+  {
+    "id": "mayrhofen-austria",
+    "name": "Mayrhofen, Austria",
+    "lat": 47.1672188,
+    "lon": 11.8638664,
+    "price": 103,
+    "rating": "4.2",
+    "description": "Designer boutiques and upscale shopping on the slopes.",
+    "image": "mayrhofen-austria.jpg"
+  },
+  {
+    "id": "hintertux-austria",
+    "name": "Hintertux, Austria",
+    "lat": 47.1150202,
+    "lon": 11.6824994,
+    "price": 279,
+    "rating": "4.1",
+    "description": "Family après-ski with sledding hills and kid’s fun park.",
+    "image": "hintertux-austria.jpg"
+  },
+  {
+    "id": "saalbach-hinterglemm-austria",
+    "name": "Saalbach Hinterglemm, Austria",
+    "lat": 47.3724977,
+    "lon": 12.5936777,
+    "price": 172,
+    "rating": "4.8",
+    "description": "Gourmet fondue and raclette experiences by candlelight.",
+    "image": "saalbach-hinterglemm-austria.jpg"
+  },
+  {
+    "id": "schladming-austria",
+    "name": "Schladming, Austria",
+    "lat": 47.3940415,
+    "lon": 13.6867878,
+    "price": 161,
+    "rating": "4.5",
+    "description": "Heated outdoor pools and mountain-view wellness spa.",
+    "image": "schladming-austria.jpg"
+  },
+  {
+    "id": "bad-gastein-austria",
+    "name": "Bad Gastein, Austria",
+    "lat": 47.0871124,
+    "lon": 13.160853,
+    "price": 254,
+    "rating": "4.7",
+    "description": "Historic mountain town charm with boutique hotels.",
+    "image": "bad-gastein-austria.jpg"
+  },
+  {
+    "id": "obergurgl-austria",
+    "name": "Obergurgl, Austria",
+    "lat": 46.8711626,
+    "lon": 11.0282497,
+    "price": 267,
+    "rating": "4.5",
+    "description": "Panoramic sunrise vistas from high-altitude lodges.",
+    "image": "obergurgl-austria.jpg"
+  },
+  {
+    "id": "alta-badia-italy",
+    "name": "Alta Badia, Italy",
+    "lat": 46.5646703,
+    "lon": 11.9102193,
+    "price": 139,
+    "rating": "4.5",
+    "description": "Swingset and playground at the base for toddlers.",
+    "image": "alta-badia-italy.jpg"
+  },
+  {
+    "id": "cortina-d-ampezzo-italy",
+    "name": "Cortina d'Ampezzo, Italy",
+    "lat": 46.5383332,
+    "lon": 12.1373506,
+    "price": 163,
+    "rating": "4.7",
+    "description": "Professional race tracks and FIS-certified courses.",
+    "image": "cortina-d-ampezzo-italy.jpg"
+  },
+  {
+    "id": "livigno-italy",
+    "name": "Livigno, Italy",
+    "lat": 46.5381734,
+    "lon": 10.1359928,
+    "price": 126,
+    "rating": "4.1",
+    "description": "Guided backcountry snowmobile excursions available.",
+    "image": "livigno-italy.jpg"
+  },
+  {
+    "id": "madonna-di-campiglio-italy",
+    "name": "Madonna di Campiglio, Italy",
+    "lat": 46.2269942,
+    "lon": 10.8270157,
+    "price": 229,
+    "rating": "4.2",
+    "description": "Varied terrain parks with international competition features.",
+    "image": "madonna-di-campiglio-italy.jpg"
+  },
+  {
+    "id": "cervinia-breuil-cervinia-italy",
+    "name": "Cervinia (Breuil-Cervinia), Italy",
+    "lat": 45.9356034,
+    "lon": 7.6304397,
+    "price": 87,
+    "rating": "4.3",
+    "description": "Free shuttle service connecting all village sectors.",
+    "image": "cervinia-breuil-cervinia-italy.jpg"
+  },
+  {
+    "id": "bormio-italy",
+    "name": "Bormio, Italy",
+    "lat": 46.4692482,
+    "lon": 10.3721712,
+    "price": 257,
+    "rating": "4.4",
+    "description": "Traditional wooden huts serving local Savoyard specialties.",
+    "image": "bormio-italy.jpg"
+  },
+  {
+    "id": "selva-di-val-gardena-italy",
+    "name": "Selva di Val Gardena, Italy",
+    "lat": 46.5551877,
+    "lon": 11.7600992,
+    "price": 134,
+    "rating": "4.4",
+    "description": "Sun-soaked south-facing slopes for perfect spring skiing.",
+    "image": "selva-di-val-gardena-italy.jpg"
+  },
+  {
+    "id": "val-gardena-italy",
+    "name": "Val Gardena, Italy",
+    "lat": 46.5760331,
+    "lon": 11.6483076,
+    "price": 230,
+    "rating": "4.0",
+    "description": "Eco-friendly resort powered by renewable energy sources.",
+    "image": "val-gardena-italy.jpg"
+  },
+  {
+    "id": "arabba-italy",
+    "name": "Arabba, Italy",
+    "lat": 46.4971763,
+    "lon": 11.8740902,
+    "price": 279,
+    "rating": "4.9",
+    "description": "Host of international ski events and World Cup races.",
+    "image": "arabba-italy.jpg"
+  },
+  {
+    "id": "canazei-dolomites-italy",
+    "name": "Canazei (Dolomites), Italy",
+    "lat": 46.4769971,
+    "lon": 11.769667,
+    "price": 247,
+    "rating": "4.3",
+    "description": "Nightlife hotspots, live music, and après-ski parties.",
+    "image": "canazei-dolomites-italy.jpg"
+  },
+  {
+    "id": "passo-tonale-italy",
+    "name": "Passo Tonale, Italy",
+    "lat": 46.2593611,
+    "lon": 10.5849034,
+    "price": 285,
+    "rating": "4.6",
+    "description": "Artisan markets showcasing local crafts and souvenirs.",
+    "image": "passo-tonale-italy.jpg"
+  },
+  {
+    "id": "sestriere-italy",
+    "name": "Sestriere, Italy",
+    "lat": 44.9584528,
+    "lon": 6.8786855,
+    "price": 259,
+    "rating": "4.5",
+    "description": "Panoramic chairlift dining with chef-prepared lunches.",
+    "image": "sestriere-italy.jpg"
+  },
+  {
+    "id": "sauze-d-oulx-italy",
+    "name": "Sauze d'Oulx, Italy",
+    "lat": 45.0270271,
+    "lon": 6.8583464,
+    "price": 158,
+    "rating": "4.2",
+    "description": "Scenic ice-climbing routes on frozen waterfalls.",
+    "image": "sauze-d-oulx-italy.jpg"
+  },
+  {
+    "id": "bardonecchia-italy",
+    "name": "Bardonecchia, Italy",
+    "lat": 45.078339,
+    "lon": 6.703205,
+    "price": 240,
+    "rating": "4.7",
+    "description": "Ski mountaineering routes with experienced guides.",
+    "image": "bardonecchia-italy.jpg"
+  },
+  {
+    "id": "cortina-italy",
+    "name": "Cortina, Italy",
+    "lat": 46.3009709,
+    "lon": 10.701062,
+    "price": 161,
+    "rating": "4.3",
+    "description": "Snow-kite and paragliding opportunities off the north face.",
+    "image": "cortina-italy.jpg"
+  },
+  {
+    "id": "verbier-switzerland",
+    "name": "Verbier, Switzerland",
+    "lat": 46.0961011,
+    "lon": 7.2286765,
+    "price": 135,
+    "rating": "4.4",
+    "description": "Pet-friendly slopes and dog-friendly lodges.",
+    "image": "verbier-switzerland.jpg"
+  },
+  {
+    "id": "zermatt-switzerland",
+    "name": "Zermatt, Switzerland",
+    "lat": 46.0212076,
+    "lon": 7.749254,
+    "price": 87,
+    "rating": "4.3",
+    "description": "Historic mountain railway connecting valley to the summit.",
+    "image": "zermatt-switzerland.jpg"
+  },
+  {
+    "id": "st-moritz-switzerland",
+    "name": "St. Moritz, Switzerland",
+    "lat": 46.4978958,
+    "lon": 9.8392428,
+    "price": 192,
+    "rating": "4.6",
+    "description": "Solar-heated pistes ensuring consistent snow conditions.",
+    "image": "st-moritz-switzerland.jpg"
+  },
+  {
+    "id": "davos-switzerland",
+    "name": "Davos, Switzerland",
+    "lat": 46.796198,
+    "lon": 9.8236892,
+    "price": 163,
+    "rating": "4.4",
+    "description": "On-mountain yoga sessions overlooking the alps.",
+    "image": "davos-switzerland.jpg"
+  },
+  {
+    "id": "grindelwald-switzerland",
+    "name": "Grindelwald, Switzerland",
+    "lat": 46.6242733,
+    "lon": 8.0367462,
+    "price": 249,
+    "rating": "4.2",
+    "description": "Panoramic views and legendary après-ski.",
+    "image": "grindelwald-switzerland.jpg"
+  },
+  {
+    "id": "wengen-switzerland",
+    "name": "Wengen, Switzerland",
+    "lat": 46.6054411,
+    "lon": 7.9217237,
+    "price": 233,
+    "rating": "4.4",
+    "description": "Perfectly groomed runs for the whole family.",
+    "image": "wengen-switzerland.jpg"
+  },
+  {
+    "id": "laax-switzerland",
+    "name": "Laax, Switzerland",
+    "lat": 46.806412,
+    "lon": 9.2581267,
+    "price": 237,
+    "rating": "4.3",
+    "description": "Powder paradise with modern high-speed lifts.",
+    "image": "laax-switzerland.jpg"
+  },
+  {
+    "id": "flims-switzerland",
+    "name": "Flims, Switzerland",
+    "lat": 46.8332439,
+    "lon": 9.2834557,
+    "price": 208,
+    "rating": "4.4",
+    "description": "Affordable comfort and picturesque slopes.",
+    "image": "flims-switzerland.jpg"
+  },
+  {
+    "id": "arosa-switzerland",
+    "name": "Arosa, Switzerland",
+    "lat": 46.7797248,
+    "lon": 9.6781356,
+    "price": 172,
+    "rating": "4.6",
+    "description": "Five-star spa and Michelin-rated dining.",
+    "image": "arosa-switzerland.jpg"
+  },
+  {
+    "id": "engelberg-switzerland",
+    "name": "Engelberg, Switzerland",
+    "lat": 46.8223497,
+    "lon": 8.4043996,
+    "price": 200,
+    "rating": "4.6",
+    "description": "Challenging black runs for advanced skiers and boarders.",
+    "image": "engelberg-switzerland.jpg"
+  },
+  {
+    "id": "crans-montana-switzerland",
+    "name": "Crans-Montana, Switzerland",
+    "lat": 46.3304899,
+    "lon": 7.5264358,
+    "price": 287,
+    "rating": "4.4",
+    "description": "Cozy chalet vibes with wood-burning fireplaces.",
+    "image": "crans-montana-switzerland.jpg"
+  },
+  {
+    "id": "andermatt-switzerland",
+    "name": "Andermatt, Switzerland",
+    "lat": 46.6340499,
+    "lon": 8.5948148,
+    "price": 89,
+    "rating": "4.3",
+    "description": "Award-winning ski school and family-friendly programs.",
+    "image": "andermatt-switzerland.jpg"
+  },
+  {
+    "id": "saas-fee-switzerland",
+    "name": "Saas-Fee, Switzerland",
+    "lat": 46.107342,
+    "lon": 7.9247055,
+    "price": 294,
+    "rating": "4.6",
+    "description": "Serene off-piste areas for backcountry enthusiasts.",
+    "image": "saas-fee-switzerland.jpg"
+  },
+  {
+    "id": "kopaonik-serbia",
+    "name": "Kopaonik, Serbia",
+    "lat": 43.2689885,
+    "lon": 20.826741,
+    "price": 259,
+    "rating": "4.4",
+    "description": "Luxury ski-in/ski-out accommodations with mountain views.",
+    "image": "kopaonik-serbia.jpg"
+  },
+  {
+    "id": "shahdag-azerbaijan",
+    "name": "Shahdag, Azerbaijan",
+    "lat": 41.3217331,
+    "lon": 48.1482891,
+    "price": 208,
+    "rating": "4.5",
+    "description": "World-class snowpark features and freestyle terrain.",
+    "image": "shahdag-azerbaijan.jpg"
+  },
+  {
+    "id": "bansko-bulgaria",
+    "name": "Bansko, Bulgaria",
+    "lat": 41.8344086,
+    "lon": 23.4841698,
+    "price": 178,
+    "rating": "4.8",
+    "description": "Traditional alpine culture and lively village atmosphere.",
+    "image": "bansko-bulgaria.jpg"
+  },
+  {
+    "id": "poiana-bra-ov-romania",
+    "name": "Poiana Brașov, Romania",
+    "lat": 45.5967098,
+    "lon": 25.5561895,
+    "price": 274,
+    "rating": "4.3",
+    "description": "Panoramic gondola rides to breathtaking summit vistas.",
+    "image": "poiana-bra-ov-romania.jpg"
+  },
+  {
+    "id": "jasn-low-tatras-slovakia",
+    "name": "Jasná - Low Tatras, Slovakia",
+    "lat": 48.9503435,
+    "lon": 19.5841533,
+    "price": 101,
+    "rating": "4.6",
+    "description": "Night skiing under floodlights and vibrant nightlife.",
+    "image": "jasn-low-tatras-slovakia.jpg"
+  },
+  {
+    "id": "ruka-finland",
+    "name": "Ruka, Finland",
+    "lat": 66.1702656,
+    "lon": 29.1311291,
+    "price": 205,
+    "rating": "4.8",
+    "description": "Guided glacier tours and year-round ski opportunities.",
+    "image": "ruka-finland.jpg"
+  },
+  {
+    "id": "levi-finland",
+    "name": "Levi, Finland",
+    "lat": 67.7844055,
+    "lon": 24.8557289,
+    "price": 123,
+    "rating": "4.9",
+    "description": "Scenic cross-country trails through frosted forests.",
+    "image": "levi-finland.jpg"
+  },
+  {
+    "id": "re-sweden",
+    "name": "Åre, Sweden",
+    "lat": 63.4010888,
+    "lon": 13.0822241,
+    "price": 197,
+    "rating": "4.5",
+    "description": "Renowned heli-skiing helipad for adventurous runs.",
+    "image": "re-sweden.jpg"
+  },
+  {
+    "id": "hemavan-sweden",
+    "name": "Hemavan, Sweden",
+    "lat": 65.8152777,
+    "lon": 15.08528,
+    "price": 262,
+    "rating": "4.0",
+    "description": "Snowshoe and winter hiking routes for nature lovers.",
+    "image": "hemavan-sweden.jpg"
+  },
+  {
+    "id": "trysil-norway",
+    "name": "Trysil, Norway",
+    "lat": 61.3561472,
+    "lon": 12.367026,
+    "price": 192,
+    "rating": "4.0",
+    "description": "Ice-skating rink and dog-sled excursions in resort center.",
+    "image": "trysil-norway.jpg"
+  },
+  {
+    "id": "hemsedal-norway",
+    "name": "Hemsedal, Norway",
+    "lat": 60.9282437,
+    "lon": 8.3834869,
+    "price": 236,
+    "rating": "4.0",
+    "description": "Designer boutiques and upscale shopping on the slopes.",
+    "image": "hemsedal-norway.jpg"
+  },
+  {
+    "id": "kvitfjell-norway",
+    "name": "Kvitfjell, Norway",
+    "lat": 58.6834043,
+    "lon": 9.0280158,
+    "price": 109,
+    "rating": "4.6",
+    "description": "Family après-ski with sledding hills and kid’s fun park.",
+    "image": "kvitfjell-norway.jpg"
+  },
+  {
+    "id": "baqueira-beret-spain",
+    "name": "Baqueira Beret, Spain",
+    "lat": 40.426687,
+    "lon": -3.6892279,
+    "price": 197,
+    "rating": "4.9",
+    "description": "Gourmet fondue and raclette experiences by candlelight.",
+    "image": "baqueira-beret-spain.jpg"
+  },
+  {
+    "id": "sierra-nevada-spain",
+    "name": "Sierra Nevada, Spain",
+    "lat": 37.0954487,
+    "lon": -3.1429881,
+    "price": 238,
+    "rating": "4.4",
+    "description": "Heated outdoor pools and mountain-view wellness spa.",
+    "image": "sierra-nevada-spain.jpg"
+  },
+  {
+    "id": "formigal-spain",
+    "name": "Formigal, Spain",
+    "lat": 42.7741349,
+    "lon": -0.3608611,
+    "price": 202,
+    "rating": "4.3",
+    "description": "Historic mountain town charm with boutique hotels.",
+    "image": "formigal-spain.jpg"
+  },
+  {
+    "id": "soldeu-grandvalira-andorra",
+    "name": "Soldeu (Grandvalira), Andorra",
+    "lat": 42.5780449,
+    "lon": 1.6662082,
+    "price": 253,
+    "rating": "5.0",
+    "description": "Panoramic sunrise vistas from high-altitude lodges.",
+    "image": "soldeu-grandvalira-andorra.jpg"
+  },
+  {
+    "id": "pas-de-la-casa-andorra",
+    "name": "Pas de la Casa, Andorra",
+    "lat": 42.5447098,
+    "lon": 1.733494,
+    "price": 114,
+    "rating": "4.9",
+    "description": "Swingset and playground at the base for toddlers.",
+    "image": "pas-de-la-casa-andorra.jpg"
+  },
+  {
+    "id": "arinsal-andorra",
+    "name": "Arinsal, Andorra",
+    "lat": 42.5720821,
+    "lon": 1.4844029,
+    "price": 106,
+    "rating": "5.0",
+    "description": "Professional race tracks and FIS-certified courses.",
+    "image": "arinsal-andorra.jpg"
+  },
+  {
+    "id": "pal-andorra",
+    "name": "Pal, Andorra",
+    "lat": 42.5457992,
+    "lon": 1.4759787,
+    "price": 150,
+    "rating": "4.4",
+    "description": "Guided backcountry snowmobile excursions available.",
+    "image": "pal-andorra.jpg"
+  },
+  {
+    "id": "vallnord-la-massana-andorra",
+    "name": "Vallnord (La Massana), Andorra",
+    "lat": 42.5658316,
+    "lon": 1.4904416,
+    "price": 281,
+    "rating": "4.8",
+    "description": "Varied terrain parks with international competition features.",
+    "image": "vallnord-la-massana-andorra.jpg"
+  },
+  {
+    "id": "kranjska-gora-slovenia",
+    "name": "Kranjska Gora, Slovenia",
+    "lat": 46.485132,
+    "lon": 13.7843957,
+    "price": 272,
+    "rating": "4.7",
+    "description": "Free shuttle service connecting all village sectors.",
+    "image": "kranjska-gora-slovenia.jpg"
+  },
+  {
+    "id": "spindleruv-mlyn-czech-republic",
+    "name": "Spindleruv Mlyn, Czech Republic",
+    "lat": 50.7256448,
+    "lon": 15.6067567,
+    "price": 252,
+    "rating": "4.9",
+    "description": "Traditional wooden huts serving local Savoyard specialties.",
+    "image": "spindleruv-mlyn-czech-republic.jpg"
+  },
+  {
+    "id": "saalbach-austria",
+    "name": "Saalbach, Austria",
+    "lat": 47.3914586,
+    "lon": 12.6364473,
+    "price": 185,
+    "rating": "4.5",
+    "description": "Sun-soaked south-facing slopes for perfect spring skiing.",
+    "image": "saalbach-austria.jpg"
+  },
+  {
+    "id": "leogang-austria",
+    "name": "Leogang, Austria",
+    "lat": 47.4386347,
+    "lon": 12.759888,
+    "price": 255,
+    "rating": "4.8",
+    "description": "Eco-friendly resort powered by renewable energy sources.",
+    "image": "leogang-austria.jpg"
+  },
+  {
+    "id": "obertauern-austria",
+    "name": "Obertauern, Austria",
+    "lat": 47.2494362,
+    "lon": 13.5569603,
+    "price": 264,
+    "rating": "4.4",
+    "description": "Host of international ski events and World Cup races.",
+    "image": "obertauern-austria.jpg"
+  },
+  {
+    "id": "bad-kleinkirchheim-austria",
+    "name": "Bad Kleinkirchheim, Austria",
+    "lat": 46.8144214,
+    "lon": 13.7983599,
+    "price": 251,
+    "rating": "4.5",
+    "description": "Nightlife hotspots, live music, and après-ski parties.",
+    "image": "bad-kleinkirchheim-austria.jpg"
+  },
+  {
+    "id": "seefeld-austria",
+    "name": "Seefeld, Austria",
+    "lat": 47.3289241,
+    "lon": 11.1867187,
+    "price": 255,
+    "rating": "4.3",
+    "description": "Artisan markets showcasing local crafts and souvenirs.",
+    "image": "seefeld-austria.jpg"
+  },
+  {
+    "id": "serfaus-fiss-ladis-austria",
+    "name": "Serfaus-Fiss-Ladis, Austria",
+    "lat": 47.0495139,
+    "lon": 10.5729763,
+    "price": 131,
+    "rating": "4.2",
+    "description": "Panoramic chairlift dining with chef-prepared lunches.",
+    "image": "serfaus-fiss-ladis-austria.jpg"
+  },
+  {
+    "id": "passo-stelvio-italy",
+    "name": "Passo Stelvio, Italy",
+    "lat": 46.512566,
+    "lon": 10.4652301,
+    "price": 223,
+    "rating": "4.3",
+    "description": "Scenic ice-climbing routes on frozen waterfalls.",
+    "image": "passo-stelvio-italy.jpg"
+  },
+  {
+    "id": "val-senales-italy",
+    "name": "Val Senales, Italy",
+    "lat": 46.7117935,
+    "lon": 10.8701943,
+    "price": 282,
+    "rating": "4.4",
+    "description": "Ski mountaineering routes with experienced guides.",
+    "image": "val-senales-italy.jpg"
+  },
+  {
+    "id": "livigno-ita",
+    "name": "Livigno (ITA)",
+    "lat": 46.4414569,
+    "lon": 10.0558156,
+    "price": 81,
+    "rating": "4.3",
+    "description": "Snow-kite and paragliding opportunities off the north face.",
+    "image": "livigno-ita.jpg"
+  },
+  {
+    "id": "davos-klosters-switzerland",
+    "name": "Davos Klosters (Switzerland)",
+    "lat": 46.8673804,
+    "lon": 9.8824688,
+    "price": 235,
+    "rating": "4.7",
+    "description": "Pet-friendly slopes and dog-friendly lodges.",
+    "image": "davos-klosters-switzerland.jpg"
+  },
+  {
+    "id": "bovec-slovenia",
+    "name": "Bovec (Slovenia)",
+    "lat": 46.3385847,
+    "lon": 13.552419,
+    "price": 297,
+    "rating": "4.4",
+    "description": "Historic mountain railway connecting valley to the summit.",
+    "image": "bovec-slovenia.jpg"
+  },
+  {
+    "id": "val-cenis-france",
+    "name": "Val Cenis, France",
+    "lat": 45.2768658,
+    "lon": 6.8170409,
+    "price": 209,
+    "rating": "4.5",
+    "description": "Solar-heated pistes ensuring consistent snow conditions.",
+    "image": "val-cenis-france.jpg"
+  },
+  {
+    "id": "les-menuires-france",
+    "name": "Les Menuires, France",
+    "lat": 45.3242744,
+    "lon": 6.5388965,
+    "price": 183,
+    "rating": "4.6",
+    "description": "On-mountain yoga sessions overlooking the alps.",
+    "image": "les-menuires-france.jpg"
+  },
+  {
+    "id": "valmeinier-france",
+    "name": "Valmeinier, France",
+    "lat": 45.1853248,
+    "lon": 6.4808156,
+    "price": 95,
+    "rating": "4.4",
+    "description": "Panoramic views and legendary après-ski.",
+    "image": "valmeinier-france.jpg"
+  },
+  {
+    "id": "montgen-vre-france",
+    "name": "Montgenèvre, France",
+    "lat": 44.9311709,
+    "lon": 6.7217996,
+    "price": 167,
+    "rating": "4.4",
+    "description": "Perfectly groomed runs for the whole family.",
+    "image": "montgen-vre-france.jpg"
+  },
+  {
+    "id": "la-rosi-re-france",
+    "name": "La Rosière, France",
+    "lat": 47.9081796,
+    "lon": 6.6250492,
+    "price": 119,
+    "rating": "4.4",
+    "description": "Powder paradise with modern high-speed lifts.",
+    "image": "la-rosi-re-france.jpg"
+  },
+  {
+    "id": "praz-de-lys-sommand-france",
+    "name": "Praz-de-Lys – Sommand, France",
+    "lat": 46.1574673,
+    "lon": 6.5694854,
+    "price": 147,
+    "rating": "4.0",
+    "description": "Affordable comfort and picturesque slopes.",
+    "image": "praz-de-lys-sommand-france.jpg"
+  },
+  {
+    "id": "les-sybelles-france",
+    "name": "Les Sybelles, France",
+    "lat": 45.2549248,
+    "lon": 6.2488657,
+    "price": 271,
+    "rating": "4.7",
+    "description": "Five-star spa and Michelin-rated dining.",
+    "image": "les-sybelles-france.jpg"
+  },
+  {
+    "id": "madesimo-italy",
+    "name": "Madesimo, Italy",
+    "lat": 46.4362982,
+    "lon": 9.3584136,
+    "price": 168,
+    "rating": "4.2",
+    "description": "Challenging black runs for advanced skiers and boarders.",
+    "image": "madesimo-italy.jpg"
+  },
+  {
+    "id": "champoluc-italy",
+    "name": "Champoluc, Italy",
+    "lat": 45.8316385,
+    "lon": 7.7259957,
+    "price": 139,
+    "rating": "4.0",
+    "description": "Cozy chalet vibes with wood-burning fireplaces.",
+    "image": "champoluc-italy.jpg"
+  },
+  {
+    "id": "monte-bondone-italy",
+    "name": "Monte Bondone, Italy",
+    "lat": 45.9880488,
+    "lon": 11.0317717,
+    "price": 253,
+    "rating": "4.2",
+    "description": "Award-winning ski school and family-friendly programs.",
+    "image": "monte-bondone-italy.jpg"
+  },
+  {
+    "id": "val-di-fiemme-italy",
+    "name": "Val di Fiemme, Italy",
+    "lat": 46.2828775,
+    "lon": 11.5430879,
+    "price": 179,
+    "rating": "5.0",
+    "description": "Serene off-piste areas for backcountry enthusiasts.",
+    "image": "val-di-fiemme-italy.jpg"
+  },
+  {
+    "id": "val-di-fassa-italy",
+    "name": "Val di Fassa, Italy",
+    "lat": 46.4489728,
+    "lon": 11.6987026,
+    "price": 134,
+    "rating": "4.1",
+    "description": "Luxury ski-in/ski-out accommodations with mountain views.",
+    "image": "val-di-fassa-italy.jpg"
+  },
+  {
+    "id": "samnaun-switzerland",
+    "name": "Samnaun, Switzerland",
+    "lat": 46.9442417,
+    "lon": 10.3600844,
+    "price": 148,
+    "rating": "4.3",
+    "description": "World-class snowpark features and freestyle terrain.",
+    "image": "samnaun-switzerland.jpg"
+  },
+  {
+    "id": "bettmeralp-switzerland",
+    "name": "Bettmeralp, Switzerland",
+    "lat": 46.3905924,
+    "lon": 8.0627954,
+    "price": 201,
+    "rating": "4.5",
+    "description": "Traditional alpine culture and lively village atmosphere.",
+    "image": "bettmeralp-switzerland.jpg"
+  },
+  {
+    "id": "leukerbad-switzerland",
+    "name": "Leukerbad, Switzerland",
+    "lat": 46.3793158,
+    "lon": 7.6267416,
+    "price": 234,
+    "rating": "4.2",
+    "description": "Panoramic gondola rides to breathtaking summit vistas.",
+    "image": "leukerbad-switzerland.jpg"
+  },
+  {
+    "id": "stoos-switzerland",
+    "name": "Stoos, Switzerland",
+    "lat": 46.9738692,
+    "lon": 8.6484625,
+    "price": 87,
+    "rating": "4.2",
+    "description": "Night skiing under floodlights and vibrant nightlife.",
+    "image": "stoos-switzerland.jpg"
+  },
+  {
+    "id": "garmisch-partenkirchen-germany",
+    "name": "Garmisch-Partenkirchen, Germany",
+    "lat": 47.4923741,
+    "lon": 11.0962815,
+    "price": 263,
+    "rating": "4.1",
+    "description": "Guided glacier tours and year-round ski opportunities.",
+    "image": "garmisch-partenkirchen-germany.jpg"
+  },
+  {
+    "id": "oberstdorf-germany",
+    "name": "Oberstdorf, Germany",
+    "lat": 47.4104347,
+    "lon": 10.2774409,
+    "price": 282,
+    "rating": "4.8",
+    "description": "Scenic cross-country trails through frosted forests.",
+    "image": "oberstdorf-germany.jpg"
+  },
+  {
+    "id": "berchtesgaden-germany",
+    "name": "Berchtesgaden (Germany)",
+    "lat": 47.6330221,
+    "lon": 13.0020051,
+    "price": 229,
+    "rating": "4.5",
+    "description": "Renowned heli-skiing helipad for adventurous runs.",
+    "image": "berchtesgaden-germany.jpg"
+  },
+  {
+    "id": "feldberg-germany",
+    "name": "Feldberg, Germany",
+    "lat": 47.8620963,
+    "lon": 8.1019449,
+    "price": 142,
+    "rating": "5.0",
+    "description": "Snowshoe and winter hiking routes for nature lovers.",
+    "image": "feldberg-germany.jpg"
+  },
+{
+  "id": "brezovica-kosovo",
+  "name": "Brezovica, Kosovo",
+  "lat": 42.4036,
+  "lon": 20.7406,
+  "price": 85,
+  "rating": "4.3",
+  "description": "Cozy chalet vibes with wood-burning fireplaces.",
+  "image": "brezovica-kosovo.jpg"
+},
+{
+  "id": "dragash-kosovo",
+  "name": "Dragash, Kosovo",
+  "lat": 42.1897,
+  "lon": 20.7208,
+  "price": 95,
+  "rating": "4.0",
+  "description": "Host of international ski events and World Cup races.",
+  "image": "dragash-kosovo.jpg"
+}
+]
