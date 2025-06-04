@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ski Track – Resorts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+    <!-- Removed internal <style> block as styles are moved to style.css -->
+        <style>
+            /* ── Navbar size fix ───────────────────────────────────────── */
+.navbar {
+  padding-top: .4rem;          /* default is ~.75rem  → trims height */
+  padding-bottom: .4rem;
+}
+
+.navbar-brand img {            /* keep logo crisp but small */
+  height: 46px;                /* pick a size that feels right */
+  width: auto;                 /* preserve aspect ratio */
+}
+
+.navbar-brand span {           /* optional: align text with the logo */
+  margin-left: .5rem;
+  font-size: 1.25rem;          /* adjust to taste */
+  font-weight: 600;
+}
+        </style>
+</head>
+<body>
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container nav-flex">
+        <div class="logo d-flex align-items-center">
+          <a href="index.html">
+            <img src="../images/logo.png" alt="Ski Track logo" class="img-fluid" style="width: 80px; height: 80px;" />
+          </a>
+          <a href="index.html" class="ms-2 text-decoration-none text-reset fw-semibold">Ski Track</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav-links navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="Resorts.html">Resorts</a></li>
+            <li class="nav-item"><a class="nav-link" href="weather.html">Weather</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <form class="d-flex ms-lg-3 mt-3 mt-lg-0" role="search" aria-label="Resort search form">
+              <input class="form-control" type="search" placeholder="Search resorts…" aria-label="Search" />
+              <button class="btn btn-outline-primary ms-2" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- Hero Section -->
+    <section class="hero position-relative">
+      <div class="hero-image-container">
+        <img src="../images/MountainBackground.jpg" class="hero-img" alt="Snow‑covered mountain range" />
+        <div class="hero-gradient"></div>
+      </div>
+      <div class="container hero-content py-5 text-center">
+        <h1 class="mb-3">Explore <span class="accent">Top Ski Resorts</span> Worldwide</h1>
+        <p class="lead mb-4">From the Alps to Aspen – discover your perfect mountain getaway.</p>
+        <a href="#featured-resorts" class="btn btn-primary btn-lg"><i class="fas fa-skiing me-2"></i>Discover resorts</a>
+      </div>
+    </section>
+
+
+
+    <!-- Featured Resort Cards Section -->
+    <section id="featured-resorts" class="section-block bg-white">
+    <div class="container">
+        <h2 class="text-center mb-5">Featured Resorts</h2>
+        <div class="row g-4">
+            <!-- Card 1: Val Thorens -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img alt="Val Thorens ski resort in France" class="card-img-top" src="../images/ValThorens.jpg"/>
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Popular</span>
+                        <h5 class="card-title">Val Thorens, France</h5>
+                        <p class="card-text">Europe's highest ski resort with breathtaking slopes and vibrant après-ski vibes.</p>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="text-warning me-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </span>
+                            <small class="text-muted">(124 reviews)</small>
+                        </div>
+                        <div class="mt-auto"> <!-- Push content below to bottom -->
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="price-tag">$199/night</span>
+                                <a class="btn btn-action" href="#">Book Now</a>
+                            </div>
+                            <div class="d-flex gap-3 mt-2 feature-icons">
+                                <span title="Snow Guarantee"><i class="fas fa-snowflake"></i></span>
+                                <span title="Hotel on Site"><i class="fas fa-hotel"></i></span>
+                                <span title="Rental Available"><i class="fas fa-skiing"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2: Whistler Blackcomb -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img alt="Whistler Blackcomb ski resort in Canada" class="card-img-top" src="../images/WhistlerBlackcomb.jpg"/>
+                    <div class="card-body">
+                        <span class="badge bg-info mb-2">Family-Friendly</span>
+                        <h5 class="card-title">Whistler Blackcomb, Canada</h5>
+                        <p class="card-text">North America's largest ski area offering endless snow adventures and charming village life.</p>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="text-warning me-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </span>
+                            <small class="text-muted">(180 reviews)</small>
+                        </div>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="price-tag">$185/night</span>
+                                <a class="btn btn-action" href="#">Book Now</a>
+                            </div>
+                            <div class="d-flex gap-3 mt-2 feature-icons">
+                                <span title="Snow Guarantee"><i class="fas fa-snowflake"></i></span>
+                                <span title="Hotel on Site"><i class="fas fa-hotel"></i></span>
+                                <span title="Rental Available"><i class="fas fa-skiing"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3: Aspen Snowmass -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img alt="Aspen Snowmass ski resort in USA" class="card-img-top" src="../images/AspenSnowmass.jpg"/>
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">Luxury</span> <!-- Added text-dark for better contrast on yellow -->
+                        <h5 class="card-title">Aspen Snowmass, USA</h5>
+                        <p class="card-text">Where luxury meets legendary skiing. A world-renowned resort with unparalleled style and service.</p>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="text-warning me-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </span>
+                            <small class="text-muted">(210 reviews)</small>
+                        </div>
+                        <div class="mt-auto">
+                             <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="price-tag">$245/night</span>
+                                <a class="btn btn-action" href="#">Book Now</a>
+                            </div>
+                            <div class="d-flex gap-3 mt-2 feature-icons">
+                                <span title="Snow Guarantee"><i class="fas fa-snowflake"></i></span>
+                                <span title="Hotel on Site"><i class="fas fa-hotel"></i></span>
+                                <span title="Rental Available"><i class="fas fa-skiing"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+   <!-- ============ Resorts Near You (single clean copy) ============ -->
+<section id="nearby-resorts" class="section-block position-relative">
+  <!-- floating snowflakes -->
+
+  <div class="container">
+    <h2 class="text-center mb-1">Resorts Near You</h2>
+    <p class="text-center text-muted mb-4">Based on your region and past searches</p>
+
+    <!-- FILTER BUTTONS -->
+    <div class="d-flex justify-content-center gap-2 flex-wrap mb-4 filter-buttons">
+      <button class="btn btn-outline-primary active" data-filter="all">All</button>
+      <button class="btn btn-outline-primary" data-filter="budget">Budget Friendly</button>
+      <button class="btn btn-outline-primary" data-filter="luxury">Luxury</button>
+      <button class="btn btn-outline-primary" data-filter="family">Family</button>
+    </div>
+
+    <!-- Cards injected here -->
+    <div id="resortsContainer" class="cards-grid text-center">
+      <p>Loading resorts…</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ========== Dynamic Resorts Script (single copy) ========== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const qs   = new URLSearchParams(location.search);
+  const lat  = qs.get('lat');
+  const lon  = qs.get('lon');
+  const box  = document.getElementById('resortsContainer');
+
+  if (!lat || !lon) {
+    box.textContent = 'Visit the home page and search for a location first.';
+    return;
+  }
+
+  /* 1 : fetch six nearest resorts */
+  fetch(`http://localhost:3000/api/resorts?lat=${lat}&lon=${lon}&limit=6`)
+    .then(res => {
+      if (!res.ok) return Promise.reject(`API error (${res.status})`);
+      return res.json();
+    })
+    .then(draw)
+    .catch(err => {
+      box.textContent = 'Error: ' + err;
+      console.error(err);
+    });
+
+  /* 2 : scrollToGrid() helper (must close before defining draw()) */
+  function scrollToGrid() {
+    const target = document.getElementById('resortsContainer');
+    if (!target) return;
+    // Adjust 80px if your navbar has different height
+    const navbarHeight = 80;
+    const y = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  /* 3 : draw() builds cards, then calls scrollToGrid() */
+  function draw(list) {
+    box.innerHTML = '';  // clear “Loading resorts…”
+
+    // Categorize each resort by price
+    const tagFor = resort => {
+      if (resort.price <= 150) return 'budget';
+      if (resort.price <= 220) return 'family';
+      return 'luxury';
+    };
+
+    list.forEach(r => {
+      const tag = tagFor(r);
+      box.insertAdjacentHTML('beforeend', `
+        <article class="resort-card resort-item reveal" data-category="${tag}">
+          <img 
+            src="../images/resorts/${encodeURIComponent(r.image || 'placeholder.jpg')}"
+            alt="${r.name}"
+            onerror="this.src='../images/resorts/placeholder.jpg'"
+            class="card-img-top"
+          />
+          <div class="resort-info d-flex flex-column p-3">
+            <h3 class="resort-title text-center mb-2">${r.name}</h3>
+            <p class="resort-meta text-center text-muted flex-grow-1 clamp-2 mb-3">
+              ${r.description || ''}
+            </p>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="price-tag fw-bold">€${r.price}/night</span>
+              <span class="resort-rating text-warning">★ ${r.rating}</span>
+            </div>
+            <a href="details.html?id=${r.id}" 
+               class="btn btn-primary btn-sm mt-auto w-100 text-center">
+              View Details
+            </a>
+          </div>
+        </article>`);
+    });
+
+    // 4 : fade-in each card once it enters viewport
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
+    box.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 5 : After cards are injected, scroll to the container
+    scrollToGrid();
+  }
+
+  /* 6 : Filter buttons logic */
+  document.querySelectorAll('[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle active state on buttons
+      document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const want = btn.getAttribute('data-filter');
+      document.querySelectorAll('.resort-item').forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (want === 'all' || (cat && cat.includes(want))) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  /* 7 : Optional “Back to Top” button (if present) */
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = (window.pageYOffset > 300) ? 'flex' : 'none';
+    });
+    backToTop.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+     
+
+
+
+
+
+<!-- Why Choose Ski Track? Section -->
+<section class="section-block bg-white why-choose-us-section">
+    <div class="container text-center">
+        <h2 class="mb-5">Why Choose Ski Track?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="p-4 rounded hover-lift h-100"> <!-- Removed shadow-sm as card style has it -->
+                    <div class="icon-circle mx-auto mb-3">
+                        <i class="fas fa-mountain fa-2x"></i>
+                    </div>
+                    <h5 class="fw-semibold">Curated Resorts</h5>
+                    <p class="text-muted">Only the highest-rated ski destinations, personally selected for unforgettable trips.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 rounded hover-lift h-100">
+                    <div class="icon-circle mx-auto mb-3">
+                        <i class="fas fa-tags fa-2x"></i>
+                    </div>
+                    <h5 class="fw-semibold">Best Price Guarantee</h5>
+                    <p class="text-muted">You’ll always get the best rate – and if not, we’ll match it. Zero stress.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 rounded hover-lift h-100">
+                    <div class="icon-circle mx-auto mb-3">
+                        <i class="fas fa-headset fa-2x"></i>
+                    </div>
+                    <h5 class="fw-semibold">24/7 Expert Support</h5>
+                    <p class="text-muted">From last-minute plans to emergency questions — our team is always on call.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+    <footer class="footer bg-dark text-light py-4">
+      <div class="container footer-flex d-flex flex-column flex-md-row justify-content-between align-items-center g-3">
+        <span class="footer-left mb-2 mb-md-0">© 2024 Ski Track. All rights reserved.</span>
+        <section class="newsletter-section mb-2 mb-md-0">
+          <div class="newsletter-container">
+            <h3 class="h6">Subscribe to our Newsletter</h3>
+            <form class="d-flex" onsubmit="event.preventDefault()">
+              <input type="email" class="form-control me-2" placeholder="Your email address…" required />
+              <button type="submit" class="btn btn-primary"><i class="fas fa-envelope"></i> Subscribe</button>
+            </form>
+          </div>
+        </section>
+        <span class="footer-right d-flex gap-2">
+          <a href="https://www.facebook.com/" target="_blank" class="text-light"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" class="text-light"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/" target="_blank" class="text-light"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com/" target="_blank" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+        </span>
+      </div>
+    </footer>
+
+<!-- Back to Top Button -->
+    <button onclick="scrollToTop()" class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow" title="Go to top">
+      <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Resort Filtering Logic
+    const filterButtons = document.querySelectorAll('.filter-buttons [data-filter]');
+    const resortItems = document.querySelectorAll('#nearby-resorts .resort-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        resortItems.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || (category && category.includes(filter))) {
+            card.style.display = ''; // Show matching cards
+          } else {
+            card.style.display = 'none'; // Hide non-matching cards
+          }
+        });
+      });
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex'; // Use flex as defined in CSS
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+  });
+</script>
+<script>
+const lat = params.get("lat"), lon = params.get("lon");
+const box = document.getElementById("resortsContainer");
+
+if (!lat || !lon) {
+  box.innerHTML = "<p>Please go back and search for a location first.</p>";
+} else {
+fetch(`http://localhost:3000/api/resorts?lat=${lat}&lon=${lon}&limit=8`)
+  .then(async (r) => {
+    if (!r.ok) {
+      const msg = await r.text();
+      throw new Error(`${r.status} – ${msg}`);
+    }
+    return r.json();
+  })
+  .then(draw)
+  .catch((err) => {
+    box.innerHTML = `<p class="text-danger">Couldn’t load resorts: ${err.message}</p>`;
+    console.error(err);
+  });
+
+}
+</script>
+<script>
+
+    const ob = new IntersectionObserver(
+    es => es.forEach(e => e.isIntersecting && e.target.classList.add('show')),
+    { threshold:.15 }
+  );
+  new MutationObserver(() => {
+    box.querySelectorAll('.reveal').forEach(el => ob.observe(el));
+  }).observe(box,{childList:true});
+  scrollToGrid();
+</script>
+
+
+</body>
+</html>

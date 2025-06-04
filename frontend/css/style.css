@@ -1,0 +1,1130 @@
+:root {
+  --primary: #2f436e;
+  --secondary: #93badb;
+  --accent: #62c6ee;
+  --background: #f7fafc;
+  --white: #fff;
+  --gray: #e6ecf2;
+}
+
+/* General */
+body, html {
+  margin: 0; padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--background);
+}
+.section-block {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--primary);
+  color: var(--white);
+  padding: 0 6rem 0 3rem;
+  position: sticky;
+  top: 0; left: 0; width: 100%;
+  z-index: 100;
+
+}
+.navbar-container {
+  padding-left: 1rem; /* Or 0 if you want it very tight */
+}
+
+.nav-flex {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  display: flex; align-items: center; font-size: 1.38em; font-weight: bold;
+}
+.logo img {
+  width: 42px; height: 42px; margin-right: 12px;
+}
+.nav-links {
+  list-style: none; display: flex; gap: 22px; margin: 0; padding: 0;
+}
+.nav-links li a {
+  color: var(--white); text-decoration: none;
+  font-weight: 500; transition: color 0.2s;
+  padding: 8px 0;
+}
+.nav-links li a:hover { color: var(--accent); }
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center
+}
+.hero-image-container {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 400px;
+  filter: brightness(0.72);
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+}
+.hero-gradient {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(45,62,90,0.38), rgba(30,37,50,0.77));
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  padding: 80px 0 50px 0;
+}
+.hero h1 {
+  font-size: 2.5em; font-weight: bold;
+  margin-bottom: 13px;
+  letter-spacing: 1.5px;
+}
+.accent { color: var(--accent); }
+.hero p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #e9e9e9;
+}
+.searchbar {
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+}
+.searchbar input {
+  padding: 13px 14px; border-radius: 10px; border: none; width: 230px;
+  font-size: 1em;
+  box-shadow: 0 1px 8px rgba(110,160,210,0.10);
+  outline: none;
+}
+.searchbar button {
+  background: var(--accent);
+  color: #fff; font-weight: bold;
+  border: none; border-radius: 10px;
+  padding: 13px 18px; font-size: 1em;
+  cursor: pointer; transition: background 0.18s;
+  display: flex; align-items: center; gap: 6px;
+}
+.searchbar button:hover { background: var(--primary);}
+.detect-btn {
+  background: var(--secondary);
+  color: var(--primary);
+  border: none;
+}
+.hero-result {
+  margin-top: 17px;
+  min-height: 28px;
+  font-size: 1.1em;
+}
+
+
+/* Top Resorts */
+.fullwidth-resorts {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: #f8f9fa; /* Optional: match your site’s background */
+  padding: 2rem 0;
+}
+
+.top-resorts-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.resort-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.resort-card {
+  flex: 1 1 22%;
+  max-width: 300px;
+  min-width: 250px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.top-resorts-container {
+  max-width: 1400px;
+  background: #fafdff;
+  padding: 10px 0 36px 0;
+  margin-top: -50px;
+}
+.top-resorts h2 {
+  color: var(--primary); text-align: center;
+  margin-bottom: 32px;
+  font-size: 2em;
+  font-weight: 700;
+}
+.resort-cards {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.resort-card {
+  width: 23%;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 2px 12px 1px #c2dbed32;
+  padding: 0 0 18px 0; margin-bottom: 18px;
+  overflow: hidden;
+  transition: transform 0.17s, box-shadow 0.17s;
+}
+
+
+.resort-card:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 24px 1px #c2dbed45; }
+.resort-card img {
+  width: 100%; height: 155px; object-fit: cover;
+}
+.resort-card .resort-info {
+  padding: 13px 15px 7px 15px;
+}
+.resort-card .resort-title {
+  color: var(--primary);
+  font-size: 1.15em; font-weight: bold;
+  margin-bottom: 7px;
+}
+.resort-card .resort-meta {
+  color: #5e7891;
+  font-size: 0.96em;
+  margin-bottom: 8px;
+}
+.resort-card .resort-rating {
+  color: #f4c74c; font-weight: 700; font-size: 1.03em;
+}
+
+/* Carousel News */
+.news-carousel-section {
+  background: #fff;
+  padding: 44px 0 36px 0;
+}
+
+.carousel-title {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 2.1rem;
+  color: var(--primary);
+}
+
+.carousel-container {
+  max-width: 1300px; /* E rrit maksimalisht carouselin */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 22px; /* më shumë hapësirë mes butonave dhe slides */
+}
+
+.carousel-btn {
+  background: #232a376a;
+  border: none;
+  color: #fff;
+  width: 54px;   /* më të mëdhenj */
+  height: 54px;  /* më të mëdhenj */
+  border-radius: 50%;
+  font-size: 2.3rem; /* ikonat më të mëdha */
+  cursor: pointer;
+  transition: background 0.17s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-btn:hover { background: var(--accent); }
+
+.carousel-news {
+  display: flex;
+  overflow: hidden;
+  width: 100vw;          /* Të zë gati krejt ekranin në desktop */
+  max-width: 950px;      /* ose provoj 1100px për më të madh */
+  min-height: 350px;     /* më i gjatë */
+  position: relative;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.06);
+}
+
+.carousel-slide {
+  min-width: 100%;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1.04);
+  background: #f7fafd;
+  border-radius: 18px;
+  box-shadow: 0 2px 24px rgba(60,80,150,0.07);
+  display: flex; flex-direction: row; align-items: stretch;
+  gap: 0;
+  overflow: hidden;
+}
+.carousel-slide img {
+  width: 370px;        /* shumë më të mëdha imazhet */
+  height: 350px;
+  object-fit: cover;
+  border-radius: 18px 0 0 18px;
+  display: block;
+}
+.carousel-slide .slide-content {
+  padding: 30px 36px 30px 32px;
+  display: flex; flex-direction: column;
+  justify-content: center;
+}
+.carousel-slide h3 {
+  font-size: 1.44rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #232a37;
+}
+.carousel-slide p {
+  color: #455066;
+  font-size: 1.09rem;
+  line-height: 1.55;
+}
+
+.carousel-dots {
+  text-align: center; margin-top: 20px;
+}
+.carousel-dot {
+  display: inline-block;
+  width: 15px; height: 15px;
+  margin: 0 4px;
+  background: #c8e9fa;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.carousel-dot.active { background: var(--accent); }
+
+
+/* ========== Activities Section ========== */
+.activities-section {
+  background: #f3f7fa;
+  padding: 44px 0 50px 0;
+}
+
+.bg-eliminate {
+  background-color: #f8f9fa; /* Same as the Worldwide Resorts background */
+  padding: 0;
+  margin: 0;
+}
+
+.activities-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2f436e;
+  font-size: 2em;
+  font-weight: 700;
+}
+.activity-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+.activity-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(55,130,190,0.11);
+  width: 165px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transition: box-shadow 0.18s, transform 0.19s;
+  cursor: pointer;
+}
+.activity-card:hover {
+  box-shadow: 0 8px 28px rgba(50,160,250,0.13);
+  transform: translateY(-3px) scale(1.03);
+}
+.activity-card span {
+  padding: 10px 0 12px 0;
+  font-size: 1.07rem;
+  font-weight: 600;
+  color: #2f436e;
+}
+
+/* ========== Trending Resorts Section ========== */
+.top-resorts-section {
+  background: #fafdff;
+  padding: 38px 0 36px 0;
+}
+.top-resorts-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.top-resorts-container h2 {
+  color: #2f436e;
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 2em;
+  font-weight: 700;
+}
+.resort-cards {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.resort-card {
+  width: 23%;
+  min-width: 260px;
+  max-width: 300px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px 1px #c2dbed32;
+  padding: 0 0 18px 0;
+  margin-bottom: 18px;
+  overflow: hidden;
+  transition: transform 0.17s, box-shadow 0.17s;
+  display: flex;
+  flex-direction: column;
+}
+.resort-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 24px 1px #c2dbed45;
+}
+.resort-card img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.resort-info {
+  padding: 13px 15px 7px 15px;
+}
+.resort-title {
+  color: #2f436e;
+  font-size: 1.15em;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+.resort-meta {
+  color: #5e7891;
+  font-size: 0.96em;
+  margin-bottom: 8px;
+}
+.resort-rating {
+  color: #f4c74c;
+  font-weight: 700;
+  font-size: 1.03em;
+}
+
+
+
+/* Newsletter */
+.newsletter-section {
+  background: var(--primary);
+  color: #fff;
+  padding: 30px 0 26px 0;
+  text-align: center;
+}
+.newsletter-container {
+  max-width: 400px; margin: 0 auto;
+}
+.newsletter-container h3 { font-size: 1.23rem; margin-bottom: 13px; }
+#newsletterForm {
+  display: flex; gap: 0;
+  border-radius: 20px; overflow: hidden;
+  margin-bottom: 7px;
+}
+#newsletterForm input[type="email"] {
+  flex: 1; padding: 11px 11px; border: none;
+  outline: none; font-size: 1rem;
+}
+#newsletterForm button {
+  background: var(--accent);
+  color: #fff; border: none; font-size: 1.08rem;
+  padding: 0 18px; cursor: pointer; transition: background 0.18s;
+}
+#newsletterForm button:hover { background: #36b3f7; }
+.newsletter-message { min-height: 18px; font-size: 1rem; }
+
+/* Weather*/
+.weather-section {
+  background: #f3f8fc;
+  padding: 40px 0 40px 0;
+}
+.weather-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.weather-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2f436e;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/*.weather-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.weather-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px 1px #c2dbed32;
+  width: 210px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+.weather-card:hover {
+  box-shadow: 0 6px 18px 1px #a7c7e1;
+  transform: translateY(-3px) scale(1.02);
+}
+.weather-img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+.weather-card-location {
+  font-weight: 700;
+  color: #2967a0;
+  margin: 9px 0 5px 0;
+  font-size: 1.08em;
+}
+.weather-card-temp {
+  font-weight: bold;
+  color: #0081c9;
+  margin: 4px 0;
+}
+.weather-card-cond {
+  color: #476584;
+  font-size: 1em;
+  margin-bottom: 2px;
+}
+.weather-card-snow,
+.weather-card-wind {
+  color: #5a7c99;
+  font-size: 0.98em;
+}
+
+.weather-highlight {
+  background: var(--gray);
+  padding: 38px 0;
+}
+.weather-highlight h2 {
+  color: var(--primary); text-align: center;
+  margin-bottom: 26px;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.weather-list {
+  display: flex; flex-wrap: wrap;
+  gap: 18px; justify-content: center;
+}
+.weather-card {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #c2dbed42;
+  min-width: 165px; max-width: 190px;
+  padding: 18px 10px 12px 10px;
+  text-align: center;
+  margin-bottom: 13px;
+}
+.weather-card .weather-location {
+  color: var(--primary); font-weight: bold; font-size: 1.06em;
+  margin-bottom: 7px;
+}
+.weather-card .weather-data {
+  color: #38608e;
+  font-size: 1.05em;
+  margin-bottom: 2px;
+}
+.weather-card .weather-temp {
+  font-size: 1.28em; color: var(--accent); font-weight: bold;
+} */
+
+.weather-map-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.weather-map {
+  width: 100%;
+  max-width: 800px; /* or remove if you want truly full width */
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.weather-pin {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.weather-pin .tooltip {
+  display: none;
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: #333;
+  padding: 8px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 0.8rem;
+}
+
+.weather-pin:hover .tooltip {
+  display: block;
+}
+.weather-layout {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.weather-map-container {
+  flex: 2 1 700px;
+}
+
+.weather-sidebar {
+  flex: 1 1 300px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: #333;
+}
+
+.weather-sidebar.secondary {
+  margin-top: 1.5rem;
+}
+
+.weather-sidebar h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2f436e;
+}
+
+.weather-sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.weather-sidebar li {
+  margin-bottom: 0.75rem;
+}
+
+
+
+/* .testimonials-section {
+  background: #f8fafd;
+  padding: 40px 0 40px 0;
+}
+.testimonials-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.testimonials-section h2 {
+  text-align: center;
+  color: #2f436e;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.testimonials-cards {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.testimonials-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 14px 2px #b8d3ef26;
+  width: 28%;
+  min-width: 260px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 18px 18px 18px;
+  margin-bottom: 18px;
+  text-align: center;
+  transition: box-shadow 0.18s, transform 0.19s;
+}
+.testimonials-card:hover {
+  box-shadow: 0 8px 28px 2px #b8d3ef45;
+  transform: translateY(-4px) scale(1.03);
+}
+.testimonials-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #62c6ee;
+}
+.testimonials-card blockquote {
+  color: #36506a;
+  font-size: 1.09em;
+  margin: 0 0 15px 0;
+  font-style: italic;
+}
+.testimonials-card span {
+  color: #0081c9;
+  font-weight: 500;
+  font-size: 1em;
+}
+  */
+  .section-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2f436e;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 50px;
+  }
+
+  .section-heading::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #2f436e;
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
+  }
+
+
+  .testimonials-section {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .testimonial-card {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background: white;
+    padding: 3rem 2rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 0 0 4px #f1f5f9;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-quote {
+    margin-top: 2rem;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #444;
+  }
+
+  .testimonial-author {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #2f436e;
+  }
+
+
+
+footer {
+  background: var(--primary);
+  color: #b9d1e7;
+  padding: 10px 0 8px 0;
+  margin-top: 22px;
+  font-size: 0.97em;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 36px;
+  min-height: 46px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Majtas: Copyright */
+.footer-left {
+  color: #b9d1e7;
+  font-size: 1em;
+  min-width: 180px;
+  letter-spacing: 0.3px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* Në mes: Newsletter */
+.newsletter-section {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: auto;
+}
+.newsletter-container {
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: left;
+}
+.newsletter-container h3 {
+  font-size: 1.08rem;
+  margin-bottom: 7px;
+  color: #d2e6f5;
+  font-weight: 600;
+}
+#newsletterForm {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  background: #e6ecf2;
+  box-shadow: none;
+  padding: 0;
+}
+#newsletterForm input[type="email"] {
+  flex: 1;
+  padding: 7px 11px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  background: transparent;
+  color: #123c65;
+  min-width: 0;
+}
+#newsletterForm button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  padding: 0 13px;
+  cursor: pointer;
+  height: 36px;
+  border-radius: 0 20px 20px 0;
+  transition: background 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#newsletterForm button:hover {
+  background: #36b3f7;
+}
+.newsletter-message {
+  font-size: 0.92em;
+  color: #e5e5e5;
+  margin-left: 6px;
+  min-height: 16px;
+}
+
+/* Djathtas: Social Icons */
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: 170px;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+.footer-right a {
+  color: #b9d1e7;
+  font-size: 1.5em;
+  margin-left: 17px;
+  display: inline-block;
+  transition: color 0.18s, background 0.16s;
+  border-radius: 7px;
+  padding: 2px 4px 2px 4px;
+}
+.footer-right a:first-child { margin-left: 0; }
+.footer-right a:hover {
+  color: #62c6ee;
+  background: #3c4e77;
+}
+
+/* Responsive */
+@media (max-width: 1050px) {
+  .footer-flex { flex-direction: column; gap: 15px; align-items: center; padding: 0 8px;}
+  .footer-left, .footer-right, .newsletter-section { justify-content: center; text-align: center; width: 100%; }
+  .newsletter-container { max-width: 98vw; }
+}
+
+
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  right: 30px; bottom: 30px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 1.4rem;
+  display: none;
+  justify-content: center; align-items: center;
+  z-index: 200;
+  box-shadow: 0 3px 16px #0002;
+}
+.back-to-top:hover { background: var(--primary);}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .container { max-width: 96vw; }
+  .carousel-news { max-width: 600px; }
+}
+@media (max-width: 900px) {
+  .resort-cards { flex-direction: column; align-items: center; }
+  .weather-list { flex-direction: column; align-items: center; }
+  .carousel-news { max-width: 95vw; }
+}
+@media (max-width: 650px) {
+  .container { padding: 0 8px; }
+  .navbar { font-size: 0.98em;}
+  .nav-links { gap: 10px; }
+  .hero-content { padding-top: 70px; }
+  .carousel-slide { flex-direction: column;}
+  .carousel-slide img { width: 100%; height: 130px; border-radius: 16px 16px 0 0;}
+}
+@media (max-width: 550px) {
+  .hero h1 { font-size: 1.2em; }
+  .top-resorts h2, .carousel-title { font-size: 1.12em; }
+  .weather-highlight h2 { font-size: 1em; }
+  .footer-flex { flex-direction: column; gap: 7px;}
+  .carousel-slide .slide-content { padding: 13px;}
+}
+
+/* A - Jon Additions */
+
+
+
+/* === Resorts Near You Filters === */
+[data-filter] {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+[data-filter].active {
+  background-color: var(--primary);
+  color: white !important;
+  border-color: var(--primary);
+}
+.resort-card {
+  transition: transform 0.2s ease;
+}
+.resort-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* —————————— Global Chatgpt :P styles —————————— */
+      /* —————————— Animated reveal utility —————————— */
+      .reveal { opacity: 0; transform: translateY(40px); }
+      .reveal.show { opacity: 1; transform: translateY(0); transition: all .7s ease-out; }
+
+      /* —————————— “Resorts Near You” section decorations —————————— */
+      #nearby-resorts-section {
+        background: linear-gradient(180deg, #f8f8f8 0%, #f6faff 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      #nearby-resorts-section .snowflake {
+        position: absolute;
+        color: var(--accent, #0d6efd);
+        opacity: 0.15;
+        animation: float 14s linear infinite;
+      }
+      #nearby-resorts-section .snowflake:nth-child(1) { left: 8%; top: -60px; font-size: 2.5rem; animation-duration: 18s; }
+      #nearby-resorts-section .snowflake:nth-child(2) { left: 85%; top: -40px; font-size: 3.5rem; animation-duration: 22s; }
+      #nearby-resorts-section .snowflake:nth-child(3) { left: 45%; top: -70px; font-size: 4rem; animation-duration: 26s; }
+      @keyframes float {
+        0%   { transform: translateY(0)   rotate(0deg); }
+        100% { transform: translateY(120vh) rotate(360deg); }
+      }
+      /* ——— Section Wave Divider ——— */
+.section-divider        { line-height: 0; }
+.section-divider svg    { width: 100%; height: 100px; display: block; }
+.section-divider .wave  { fill: #f6faff; }   /* matches “Resorts Near You” bg */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+/* ==== Dynamic “Resorts Near You” cards ==== */
+.cards-grid .card {
+  border: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  transition: transform .18s;
+  height: 100%;
+}
+.cards-grid .card:hover { transform: translateY(-4px); }
+
+.cards-grid .card-img-top {
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1.5rem;
+}
+.card{border:0;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:transform .18s;}
+.card:hover{transform:translateY(-4px);}
+.card-img-top{height:150px;object-fit:cover;border-radius:12px 12px 0 0;}
+
+
+
+
+/* === Resorts Near You grid – exact static look =============== */
+
+
+
+
+/* simple reveal fade-in */
+.reveal{opacity:0;transform:translateY(40px);transition:.6s ease-out;}
+.reveal.show{opacity:1;transform:none;}
+/* ==== Resorts Near You – clean grid & card =================== */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;margin-top:4rem}
+.resort-card{border:0;border-radius:12px;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:.18s;overflow:hidden}
+.resort-card:hover{transform:translateY(-5px);box-shadow:0 8px 26px rgba(0,0,0,.12)}
+.resort-card img{width:100%;height:180px;object-fit:cover}
+.resort-info{padding:16px 18px 22px}
+.resort-title{font-size:1.15rem;font-weight:600;color:#2f436e;margin-bottom:6px}
+.resort-meta{font-size:.9rem;color:#5e7891;margin-bottom:14px;min-height:40px}
+.price-tag{font-weight:700;font-size:1.05rem;color:#2f436e}
+.resort-rating{color:#f1b63a;font-weight:700;font-size:.95rem}
+.btn-action{background:#0d6efd;color:#fff;border:0;border-radius:6px;padding:.55rem 1rem;font-size:.85rem;font-weight:600;transition:.18s}
+.btn-action:hover{background:#094dcf}
+.reveal{opacity:0;transform:translateY(40px);transition:.6s ease-out}
+.reveal.show{opacity:1;transform:none}
+
+/* Filter pill buttons */
+.filter-buttons .btn{border-radius:20px;padding:.4rem 1.2rem}
+.filter-buttons .btn.active{background:#0d6efd;color:#fff;border-color:#0d6efd}
+
+/* a qyuucik fix for the alignment stuff */
+/* ---------- Resort card: ensure price row stays at bottom ---------- */
+.resort-card{
+  display:flex;               /* turn the whole card into flex-column */
+  flex-direction:column;
+}
+.resort-info{                 /* let info area fill available height */
+  display:flex;
+  flex-direction:column;
+  flex:1 1 auto;
+}
+.resort-meta{min-height:40px} /* keeps description height equal */
+.resort-btn{margin-top:auto}
+.resort-btn-wrapper{
+  margin-top:auto;            /* pushes button to bottom */
+}
+.clamp-2{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  min-height:3.2rem;          /* keeps price row aligned */
+}
+/* ---- Resorts Near You final alignment ------------------ */
+.resort-card      { display:flex; flex-direction:column; }  /* full card as column */
+.resort-info      { display:flex; flex-direction:column; flex:1 1 auto; }
+.resort-btn       { margin-top:auto; }                      /* push CTA to bottom */
+.clamp-2          { display:-webkit-box; -webkit-box-orient:vertical;
+                    -webkit-line-clamp:2; overflow:hidden; min-height:3.2rem; }
+/* =========== final alignment tweaks =========== */
+.resort-card   {display:flex;flex-direction:column}
+.resort-info   {display:flex;flex-direction:column;flex:1 1 auto;padding:16px 18px 22px}
+.resort-details{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+
+.clamp-2{
+  display:-webkit-box;-webkit-box-orient:vertical;
+  -webkit-line-clamp:2;overflow:hidden;min-height:3.2rem;
+}
+/* make anchor scrolling account for sticky navbar height */
+#nearby-resorts { scroll-margin-top: 80px; }   /* same value as navbar */
