@@ -1,11 +1,8 @@
-// File: backend/routes/weather.js
-
 const express = require('express');
 const axios   = require('axios');
 const router  = express.Router();
 require('dotenv').config(); // Loads SLOPE_API_KEY from .env
-
-//
+// //
 // ───── In-Memory Cache for Open-Meteo Calls ─────
 //
 const wxCache = {};
@@ -54,7 +51,7 @@ router.get('/search', async (req, res) => {
         .json({ error: 'Missing "resort" query parameter.' });
     }
 
-    // 2) Find matching resortObj by prefix (case-insensitive) in data/resorts.json
+  
     const allResorts = require('../data/resorts.json');
     const resortObj = allResorts.find(r =>
       r.name.toLowerCase().startsWith(resort.toLowerCase())
@@ -65,7 +62,7 @@ router.get('/search', async (req, res) => {
         .json({ error: `Resort "${resort}" not found.` });
     }
 
-    // 3) Fetch current weather for that resort
+  
     const weatherRaw = await fetchWeather(resortObj);
     if (!weatherRaw) {
       return res
@@ -74,7 +71,7 @@ router.get('/search', async (req, res) => {
     }
     const cw = weatherRaw.current_weather;
 
-    // Compute recent snowfall totals from hourly data
+  
     let snow24h = 0,
         snow3d = 0,
         snow7d = 0;
@@ -95,7 +92,6 @@ router.get('/search', async (req, res) => {
     const SLOPE_API_KEY = process.env.SLOPE_API_KEY;
     let slopeData;
     try {
-      // Replace the URL below with your actual slope/lifts endpoint.
       // Example: GET https://api.example-slopes.com/v1/resorts/{resort_id}/status?api_key=…
       const apiRes = await axios.get(
         `https://api.example-slopes.com/v1/resorts/${encodeURIComponent(resortObj.id)}/status`,
@@ -119,9 +115,9 @@ router.get('/search', async (req, res) => {
         liftsOpen: 'N/A'
       };
     }
-    // ────────────────────────────────────────────────────────────────────────
 
-    // 5) Build the 7-day forecast from daily data in the forecast API
+
+    // The 7-day forecast from daily data in the forecast API
     const today = new Date();
     const endDateObj = new Date();
     endDateObj.setDate(today.getDate() + 6); // Next 6 days + today = 7 days total
@@ -165,7 +161,6 @@ router.get('/search', async (req, res) => {
       };
     });
 
-    // Assemble the final JSON response exactly as the front end expects
     const result = {
   name:           `${resortObj.name}`,
   rating: resortObj.rating || null,
