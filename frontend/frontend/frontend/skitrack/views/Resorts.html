@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resorts - Ski Track</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .flip-card {
+      background-color: transparent;
+      width: 83%;
+      height: 300px;
+      perspective: 1000px;
+      transition: transform 0.3s ease-in-out;
+      
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover {
+        transform: translateY(-10px); 
+    }
+
+    .flip-card.clicked .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .flip-card-front {
+      background: #fff;
+    }
+    .flip-card-back {
+      background: var(--primary);
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+   
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container nav-flex">
+      <div class="logo d-flex align-items-center">
+        <img src="../images/logo.png" alt="Ski Track Logo" class="img-fluid" style="width: 80px; height: 80px;">
+        <span>Ski Track</span>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav-links navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="Resorts.html">Resorts</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Weather</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero position-relative">
+    <div class="hero-image-container">
+      <img src="../images/Containerslopes.jpg" alt="Ski Resorts" class="hero-img">
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="container hero-content py-5">
+      <h1>Discover <span class="accent">Amazing Resorts</span></h1>
+      <p>Explore the best ski resorts around the world for your perfect winter getaway!</p>
+    </div>
+  </section>
+
+  <!-- Resorts List -->
+  <section class="section top-resorts-section py-5">
+    <div class="container top-resorts-container">
+      <h2>Top Resorts</h2>
+      <div class="row resort-cards g-4">
+
+        <!-- Resort Card 1 -->
+        <div class="col-md-3">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/ValThorens.jpg" alt="Val Thorens" class="img-fluid rounded">
+                <div class="resort-info text-center p-2">
+                  <div class="resort-title">Val Thorens</div>
+                  <div class="resort-meta">France | 2,300m</div>
+                  <div class="resort-rating">4.8 ⭐</div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <h5>Val Thorens</h5>
+                <p>Europe's highest resort, perfect for powder and nightlife lovers!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resort Card 2 -->
+        <div class="col-md-3">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/WhistlerBlackcomb.jpg" alt="Whistler Blackcomb" class="img-fluid rounded">
+                <div class="resort-info text-center p-2">
+                  <div class="resort-title">Whistler Blackcomb</div>
+                  <div class="resort-meta">Canada | 2,182m</div>
+                  <div class="resort-rating">4.7 ⭐</div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <h5>Whistler Blackcomb</h5>
+                <p>The largest ski resort in North America with endless terrains!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resort Card 3 -->
+        <div class="col-md-3">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/St. Moritz.jpg" alt="St. Moritz" class="img-fluid rounded">
+                <div class="resort-info text-center p-2">
+                  <div class="resort-title">St. Moritz</div>
+                  <div class="resort-meta">Switzerland | 1,856m</div>
+                  <div class="resort-rating">4.9 ⭐</div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <h5>St. Moritz</h5>
+                <p>Luxurious alpine resort town famous for winter sports and glamour.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resort Card 4 -->
+        <div class="col-md-3">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="../images/AspenSnowmass.jpg" alt="Aspen Snowmass" class="img-fluid rounded">
+                <div class="resort-info text-center p-2">
+                  <div class="resort-title">Aspen Snowmass</div>
+                  <div class="resort-meta">USA | 2,473m</div>
+                  <div class="resort-rating">4.6 ⭐</div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <h5>Aspen Snowmass</h5>
+                <p>Colorado's premier resort, known for its culture and deep powder.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- Resort Card 5 -->
+          <div class="col-md-3">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../images/Austria.jpg" alt="Kühtai" class="img-fluid rounded">
+                  <div class="resort-info text-center p-2">
+                    <div class="resort-title">Kühtai</div>
+                    <div class="resort-meta">Austria | 2,020m</div>
+                    <div class="resort-rating">4.9 ⭐</div>
+                  </div>
+                </div>
+                <div class="flip-card-back">
+                  <h5>Kühtai</h5>
+                  <p>Austria's highest ski resort village with an altitude of over 2000m.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      <!-- Resort Features -->
+      <div class="mt-5">
+        <h3 class="text-center mb-4">Why Choose Our Resorts?</h3>
+        <div class="row text-center">
+          <div class="col-md-4 mb-4">
+            <i class="fas fa-skiing fa-3x text-primary mb-3"></i>
+            <h5>Best Skiing Terrain</h5>
+            <p>From beginners to experts, enjoy perfectly groomed trails and adventurous off-piste slopes.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="fas fa-hotel fa-3x text-primary mb-3"></i>
+            <h5>Luxury Lodging</h5>
+            <p>Experience world-class hotels, cozy cabins, and mountain lodges for ultimate relaxation.</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <i class="fas fa-snowflake fa-3x text-primary mb-3"></i>
+            <h5>Perfect Snow</h5>
+            <p>Our resorts are renowned for pristine snow conditions throughout the season.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-light">
+    <p>&copy; 2025 Ski Track. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.flip-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('clicked');
+      });
+    });
+  </script>
+</body>
+</html>
