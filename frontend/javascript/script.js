@@ -1,3 +1,7 @@
+
+const weatherList   = document.getElementById('weatherList');
+const weatherToggle = document.getElementById('weatherToggle');
+
 function showWeather() {
   const el = document.getElementById('weatherList');
   el.innerHTML = weatherList.map(w => `
@@ -135,3 +139,31 @@ window.onscroll = function() {
 function scrollToTop(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
+async function loadTopPicks() {
+  try {
+    const response = await fetch("http://localhost:3000/api/weather/picks");
+    const picks = await response.json();
+
+    const container = document.getElementById("top-picks-container");
+    container.innerHTML = "";
+
+    picks.forEach(resort => {
+      const col = document.createElement("div");
+      col.className = "col-md-3 card p-3 top-pick-card";
+
+      col.innerHTML = `
+        <h5>${resort.name}</h5>
+        <p><strong>Temperature:</strong> ${resort.temperature}°C</p>
+        <p><strong>Wind Speed:</strong> ${resort.windspeed} km/h</p>
+        <p><strong>Cloud Cover:</strong> ${resort.cloudcover}%</p>
+        <p><strong>Score:</strong> ${resort.score.toFixed(2)}</p>
+      `;
+
+      container.appendChild(col);
+    });
+  } catch (error) {
+    console.error("Failed to load top picks:", error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadTopPicks);

@@ -1,6 +1,0 @@
-Ne kete faze kane punuar ne frontend:
-Rea Bektashi 
-Anida Kadriu 
-Driole Krasniqi
-Etna Grantolli
-Linku i git "https://github.com/adeaashkreta/skitrack.git"
