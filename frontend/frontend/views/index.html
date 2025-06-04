@@ -5,12 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ski Track - Find Your Perfect Ski Resort</title>
   <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Your Custom CSS -->
-  <link rel="stylesheet" href="../css/style.css"/>
+<link href="../css/style.css" rel="stylesheet"/>
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+fetch('http://localhost:3000/api/weather')
+  .then(r => r.json())
+  .then(renderWeather)
+  .catch(err => console.error('Weather fetch error:', err));
+  const list = document.getElementById('weatherList');
+if (!list)              // prevents “weatherList is not defined”
+});
+
+</script>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
@@ -55,11 +67,11 @@
       <h1>Find the Best <span class="accent">Ski Resorts</span> Near You</h1>
       <p>Search by location or let us auto-detect your position and discover top ski destinations, snow conditions and more!</p>
       <div class="searchbar input-group mb-3">
-        <input id="locationInput" type="text" class="form-control" placeholder="Enter your location..."/>
-        <button class="btn btn-primary" onclick="handleSearch()">
-          <span id="searchIcon"><i class="fa fa-search"></i></span> Search
-        </button>
-        <button class="detect-btn btn btn-outline-secondary" onclick="detectLocation()"><span>📍</span> Auto-detect</button>
+<input id="locationInput" type="text" class="form-control" placeholder="Enter your location..."/>
+<button id="searchBtn" class="btn btn-primary">
+  <i class="fa fa-search"></i> Search
+</button>
+        <button id="autoBtn" class="detect-btn btn btn-outline-secondary" onclick="detectLocation()"><span>📍</span> Auto-detect</button>
       </div>
       <div id="heroResult" class="hero-result"></div>
     </div>
@@ -251,20 +263,20 @@
         <div class="weather-sidebar">
           <h3>Today's Highlights</h3>
           <ul>
-            <li>❄️ Coldest: Zermatt – -5°C</li>
-            <li>🌬 Windiest: St. Moritz – Strong</li>
-            <li>☀️ Sunniest: Brezovica</li>
+            <li id="coldest">❄️ Coldest: Loading...</li>
+            <li id="windiest">💨 Windiest: Loading...</li>
+            <li id="sunniest">🌞 Sunniest: Loading...</li>
           </ul>
         </div>
     
+        
         <div class="weather-sidebar secondary">
           <h3>Our Top Picks for the Week</h3>
-          <ul>
-            <li>⛷ Zermatt – Excellent snow & sunny</li>
-            <li>🏔 St. Moritz – Fresh powder & events</li>
-            <li>🎿 Brezovica – Great for beginners</li>
-            <li>🏔 Lorem Ipsum – Great for Intermidiate</li>
-            <li>⛷ Lorem Ipsum – Excellent snow conditions</li>
+          <ul id="top-picks-list">
+            <li>⛷ Loading top picks...</li>
+            <li>🏔 Loading top picks...</li>
+            <li>🎿 Loading top picks...</li>
+            <li>🏔 Loading top picks...</li>
           </ul>
         </div>
       </div>
@@ -345,8 +357,55 @@
   </button>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <script src="../javascript/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // ————— Geocoding helper —————
+  async function geocode(query) {
+    const url = "https://nominatim.openstreetmap.org/search?format=json&limit=1&q="
+                + encodeURIComponent(query);
+    const res  = await fetch(url, { headers: { "Accept-Language": "en" } });
+    const [hit] = await res.json();
+    return hit ? { lat: hit.lat, lon: hit.lon } : null;
+  }
+
+  // ————— Manual “Search” button (Hero) —————
+  document.getElementById("searchBtn").addEventListener("click", async (e) => {
+    e.preventDefault();  
+    const q = document.getElementById("locationInput").value.trim();
+    if (!q) return alert("Please type a place first!");
+
+    const loc = await geocode(q);
+    if (!loc) return alert("Location not found!");
+
+    // Redirect to Resorts.html **with the correct coords** and the hash
+    window.location.href =
+      `resorts.html?lat=${loc.lat}&lon=${loc.lon}#resortsContainer`;
+  });
+
+  // ————— “Auto-detect” button (Hero) —————
+  document.getElementById("autoBtn").addEventListener("click", () => {
+    if (!navigator.geolocation) {
+      return alert("Geolocation not supported");
+    }
+    navigator.geolocation.getCurrentPosition(
+      (p) => {
+        // Use `p.coords` (latitude/longitude) and append the hash
+        window.location.href =
+          `resorts.html?lat=${p.coords.latitude}&lon=${p.coords.longitude}#resortsContainer`;
+      },
+      () => alert("Couldn’t get your position 😢")
+    );
+  });
+
+  // ————— Prevent the navbar‐search (input in the navbar) from reloading the page —————
+  // (Optional: only if you want to disable the top‐of‐page search form’s “submit”.)
+  document.querySelector('nav form[role="search"]').addEventListener('submit', e => {
+    e.preventDefault();
+    // Optionally route this anywhere else, or simply do nothing:
+    alert("Use the hero‐section search instead to find resorts.");
+  });
+</script>
+
 </body>
 </html>

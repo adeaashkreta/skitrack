@@ -191,10 +191,10 @@ body, html {
   display: flex;
   gap: 26px;
   flex-wrap: wrap;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 .resort-card {
-  width: 23%; 
+  width: 23%;
   background: var(--white);
   border-radius: 15px;
   box-shadow: 0 2px 12px 1px #c2dbed32;
@@ -231,18 +231,18 @@ body, html {
   padding: 44px 0 36px 0;
 }
 
-.carousel-title { 
-  text-align: center; 
-  margin-bottom: 18px; 
-  font-size: 2.1rem; 
+.carousel-title {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 2.1rem;
   color: var(--primary);
 }
 
 .carousel-container {
   max-width: 1300px; /* E rrit maksimalisht carouselin */
   margin: 0 auto;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
   position: relative;
   gap: 22px; /* më shumë hapësirë mes butonave dhe slides */
@@ -733,7 +733,7 @@ body, html {
     position: relative;
     padding-bottom: 50px;
   }
-  
+
   .section-heading::after {
     content: "";
     display: block;
@@ -743,14 +743,14 @@ body, html {
     margin: 0.75rem auto 0;
     border-radius: 2px;
   }
-  
+
 
   .testimonials-section {
     max-width: 1230px;
     margin: 0 auto;
     padding: 4rem 2rem;
   }
-  
+
   .testimonials-grid {
     display: flex;
     flex-wrap: wrap;
@@ -758,7 +758,7 @@ body, html {
     gap: 2rem;
     margin-top: 2rem;
   }
-  
+
   .testimonial-card {
     flex: 1 1 300px;
     max-width: 400px;
@@ -770,11 +770,11 @@ body, html {
     position: relative;
     transition: transform 0.3s ease;
   }
-  
+
   .testimonial-card:hover {
     transform: translateY(-5px);
   }
-  
+
   .testimonial-avatar {
     width: 80px;
     height: 80px;
@@ -787,26 +787,26 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .testimonial-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  
+
   .testimonial-quote {
     margin-top: 2rem;
     font-style: italic;
     font-size: 0.95rem;
     color: #444;
   }
-  
+
   .testimonial-author {
     margin-top: 1rem;
     font-weight: bold;
     color: #2f436e;
   }
-  
+
 
 
 footer {
@@ -952,7 +952,7 @@ footer {
   box-shadow: 0 3px 16px #0002;
 }
 .back-to-top:hover { background: var(--primary);}
-  
+
 /* Responsive */
 @media (max-width: 1100px) {
   .container { max-width: 96vw; }
@@ -978,3 +978,153 @@ footer {
   .footer-flex { flex-direction: column; gap: 7px;}
   .carousel-slide .slide-content { padding: 13px;}
 }
+
+/* A - Jon Additions */
+
+
+
+/* === Resorts Near You Filters === */
+[data-filter] {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+[data-filter].active {
+  background-color: var(--primary);
+  color: white !important;
+  border-color: var(--primary);
+}
+.resort-card {
+  transition: transform 0.2s ease;
+}
+.resort-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* —————————— Global Chatgpt :P styles —————————— */
+      /* —————————— Animated reveal utility —————————— */
+      .reveal { opacity: 0; transform: translateY(40px); }
+      .reveal.show { opacity: 1; transform: translateY(0); transition: all .7s ease-out; }
+
+      /* —————————— “Resorts Near You” section decorations —————————— */
+      #nearby-resorts-section {
+        background: linear-gradient(180deg, #f8f8f8 0%, #f6faff 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      #nearby-resorts-section .snowflake {
+        position: absolute;
+        color: var(--accent, #0d6efd);
+        opacity: 0.15;
+        animation: float 14s linear infinite;
+      }
+      #nearby-resorts-section .snowflake:nth-child(1) { left: 8%; top: -60px; font-size: 2.5rem; animation-duration: 18s; }
+      #nearby-resorts-section .snowflake:nth-child(2) { left: 85%; top: -40px; font-size: 3.5rem; animation-duration: 22s; }
+      #nearby-resorts-section .snowflake:nth-child(3) { left: 45%; top: -70px; font-size: 4rem; animation-duration: 26s; }
+      @keyframes float {
+        0%   { transform: translateY(0)   rotate(0deg); }
+        100% { transform: translateY(120vh) rotate(360deg); }
+      }
+      /* ——— Section Wave Divider ——— */
+.section-divider        { line-height: 0; }
+.section-divider svg    { width: 100%; height: 100px; display: block; }
+.section-divider .wave  { fill: #f6faff; }   /* matches “Resorts Near You” bg */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+/* ==== Dynamic “Resorts Near You” cards ==== */
+.cards-grid .card {
+  border: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  transition: transform .18s;
+  height: 100%;
+}
+.cards-grid .card:hover { transform: translateY(-4px); }
+
+.cards-grid .card-img-top {
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1.5rem;
+}
+.card{border:0;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:transform .18s;}
+.card:hover{transform:translateY(-4px);}
+.card-img-top{height:150px;object-fit:cover;border-radius:12px 12px 0 0;}
+
+
+
+
+/* === Resorts Near You grid – exact static look =============== */
+
+
+
+
+/* simple reveal fade-in */
+.reveal{opacity:0;transform:translateY(40px);transition:.6s ease-out;}
+.reveal.show{opacity:1;transform:none;}
+/* ==== Resorts Near You – clean grid & card =================== */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;margin-top:4rem}
+.resort-card{border:0;border-radius:12px;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:.18s;overflow:hidden}
+.resort-card:hover{transform:translateY(-5px);box-shadow:0 8px 26px rgba(0,0,0,.12)}
+.resort-card img{width:100%;height:180px;object-fit:cover}
+.resort-info{padding:16px 18px 22px}
+.resort-title{font-size:1.15rem;font-weight:600;color:#2f436e;margin-bottom:6px}
+.resort-meta{font-size:.9rem;color:#5e7891;margin-bottom:14px;min-height:40px}
+.price-tag{font-weight:700;font-size:1.05rem;color:#2f436e}
+.resort-rating{color:#f1b63a;font-weight:700;font-size:.95rem}
+.btn-action{background:#0d6efd;color:#fff;border:0;border-radius:6px;padding:.55rem 1rem;font-size:.85rem;font-weight:600;transition:.18s}
+.btn-action:hover{background:#094dcf}
+.reveal{opacity:0;transform:translateY(40px);transition:.6s ease-out}
+.reveal.show{opacity:1;transform:none}
+
+/* Filter pill buttons */
+.filter-buttons .btn{border-radius:20px;padding:.4rem 1.2rem}
+.filter-buttons .btn.active{background:#0d6efd;color:#fff;border-color:#0d6efd}
+
+/* a qyuucik fix for the alignment stuff */
+/* ---------- Resort card: ensure price row stays at bottom ---------- */
+.resort-card{
+  display:flex;               /* turn the whole card into flex-column */
+  flex-direction:column;
+}
+.resort-info{                 /* let info area fill available height */
+  display:flex;
+  flex-direction:column;
+  flex:1 1 auto;
+}
+.resort-meta{min-height:40px} /* keeps description height equal */
+.resort-btn{margin-top:auto}
+.resort-btn-wrapper{
+  margin-top:auto;            /* pushes button to bottom */
+}
+.clamp-2{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  min-height:3.2rem;          /* keeps price row aligned */
+}
+/* ---- Resorts Near You final alignment ------------------ */
+.resort-card      { display:flex; flex-direction:column; }  /* full card as column */
+.resort-info      { display:flex; flex-direction:column; flex:1 1 auto; }
+.resort-btn       { margin-top:auto; }                      /* push CTA to bottom */
+.clamp-2          { display:-webkit-box; -webkit-box-orient:vertical;
+                    -webkit-line-clamp:2; overflow:hidden; min-height:3.2rem; }
+/* =========== final alignment tweaks =========== */
+.resort-card   {display:flex;flex-direction:column}
+.resort-info   {display:flex;flex-direction:column;flex:1 1 auto;padding:16px 18px 22px}
+.resort-details{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+
+.clamp-2{
+  display:-webkit-box;-webkit-box-orient:vertical;
+  -webkit-line-clamp:2;overflow:hidden;min-height:3.2rem;
+}
+/* make anchor scrolling account for sticky navbar height */
+#nearby-resorts { scroll-margin-top: 80px; }   /* same value as navbar */
