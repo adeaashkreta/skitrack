@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ski Track - Weather</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .weather-hero {
+      background: url('../images/weather-hero.jpg') center/cover no-repeat;
+      position: relative;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+
+    .weather-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .weather-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .weather-cards .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .weather-cards .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .forecast-item {
+      background-color: #f0f4f8;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .forecast-item h6 {
+      font-weight: bold;
+      color: #004b8d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container nav-flex">
+      <div class="logo d-flex align-items-center">
+        <a href="index.html">
+          <img src="../views/../images/logo.png" alt="Ski Track Logo" class="img-fluid" style="width: 80px; height: 80px;" />
+        </a>        
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+          <span>Ski Track</span>
+        </a>        
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav-links navbar-nav ms-auto">
+          <ul class="nav-links navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="Resorts.html">Resorts</a></li>
+            <li class="nav-item"><a class="nav-link active " href="weather.html" id="weather-link">Weather</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="weather-hero">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold">Mountain Weather & Conditions</h1>
+      <p class="lead">Stay ahead of the snow with the latest forecasts and lift updates.</p>
+    </div>
+  </section>
+
+  <!-- Conditions -->
+  <section class="container my-5 weather-cards">
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="card p-4">
+          <i class="fas fa-cloud-snow fa-2x text-primary mb-2"></i>
+          <h5>Snow Condition</h5>
+          <p id="snowDesc">Loading...</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <i class="fas fa-temperature-low fa-2x text-danger mb-2"></i>
+          <h5>Temperature</h5>
+          <p id="temperature">Loading...</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <i class="fas fa-cable-car fa-2x text-success mb-2"></i>
+          <h5>Lift Status</h5>
+          <p id="liftStatus">Loading...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forecast -->
+  <section class="container mb-5">
+    <h3 class="text-center mb-4">3-Day Snow Forecast</h3>
+    <div class="row justify-content-center">
+      <div class="col-md-3 forecast-item">
+        <h6>Today</h6>
+        <p id="day1">Loading...</p>
+      </div>
+      <div class="col-md-3 forecast-item">
+        <h6>Tomorrow</h6>
+        <p id="day2">Loading...</p>
+      </div>
+      <div class="col-md-3 forecast-item">
+        <h6>+2 Days</h6>
+        <p id="day3">Loading...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-light py-4">
+    <div class="container footer-flex d-flex flex-column flex-md-row justify-content-between align-items-center">
+      
+      <span class="footer-left mb-2 mb-md-0">
+        © 2024 Ski Track. All rights reserved.
+      </span>
+      
+      <section class="newsletter-section mb-2 mb-md-0">
+        <div class="newsletter-container">
+          <h3 class="h6">Subscribe to our Ski Track Newsletter</h3>
+          <form id="newsletterForm" class="d-flex" onsubmit="subscribeNewsletter(event)">
+            <input type="email" id="newsletterEmail" class="form-control me-2" placeholder="Your email address..." required>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-envelope"></i> Subscribe</button>
+          </form>
+          <div class="newsletter-message" id="newsletterMessage"></div>
+        </div>
+      </section>
+      
+      <span class="footer-right">
+        <a href="https://www.facebook.com/" target="_blank" class="text-light me-2">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="text-light me-2">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/" target="_blank" class="text-light me-2">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://al.linkedin.com/" target="_blank" class="text-light">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </span>
+    </div>
+  </footer>
+
+  
+  <button onclick="scrollToTop()" class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow" id="backToTopBtn" title="Go to top">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("snowDesc").innerText = "Fresh powder, great for skiing";
+      document.getElementById("temperature").innerText = "-4°C (feels like -7°C)";
+      document.getElementById("liftStatus").innerText = "13 out of 15 lifts operational";
+      document.getElementById("day1").innerText = "🌨️ Snow showers, -2°C / -7°C";
+      document.getElementById("day2").innerText = "☁️ Cloudy, -1°C / -5°C";
+      document.getElementById("day3").innerText = "☀️ Clear, 2°C / -1°C";
+    });
+  </script>
+</body>
+</html>
