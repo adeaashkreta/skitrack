@@ -9,7 +9,11 @@
     content="Live snow stats, slope status and 7-day forecasts for the world’s best ski resorts."
   />
 
+<<<<<<< HEAD
   <!-- Core CSS  shared site palette -->
+=======
+  <!-- Core CSS + shared site palette -->
+>>>>>>> 393e90068c8f1905fee309792eb8f89e82a2e172
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -308,8 +312,8 @@
               >Weather</a
             >
           </li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -338,7 +342,11 @@
         </p>
       </div>
 
+<<<<<<< HEAD
       <!-- search  secondary link -->
+=======
+      <!-- search + secondary link -->
+>>>>>>> 393e90068c8f1905fee309792eb8f89e82a2e172
       <form
         id="searchForm"
         class="hero-cta d-flex flex-wrap gap-2 justify-content-center"
@@ -389,7 +397,11 @@
           id="headerFlex"
           class="d-flex flex-column flex-md-row justify-content-between align-items-center"
         >
+<<<<<<< HEAD
           <!-- Resort name  rating block -->
+=======
+          <!-- Resort name + rating block -->
+>>>>>>> 393e90068c8f1905fee309792eb8f89e82a2e172
           <div id="resortBlock" class="text-center flex-grow-1">
             <h2 id="resortName" class="fw-bold mb-1"></h2>
             <div
@@ -419,7 +431,11 @@
     </svg>
   </div>
 
+<<<<<<< HEAD
   <!-- STATUS  WEATHER CARDS --------------------------------------------->
+=======
+  <!-- STATUS + WEATHER CARDS --------------------------------------------->
+>>>>>>> 393e90068c8f1905fee309792eb8f89e82a2e172
   <section
     id="statusSection"
     class="section-block bg-light"
@@ -589,10 +605,11 @@
         $("#resortHeader").style.display   = "none";
         $("#statusSection").style.display   = "none";
         $("#forecastSection").style.display = "none";
+<<<<<<< HEAD
            $("#noResultMessage").style.display = "none";
     try {
       // ───── REPLACED with OpenWeatherMap  Ski-Resort API calls ─────
-      const OWM_API_KEY   = "16d3e96a856c011bc35dbcaefb675813";
+      const OWM_API_KEY   = "1cb9a8c0a9f56d529da9bb8c58189a85";
       const RAPIDAPI_KEY  = "7c49c5f114msh6f50fa985406bb8p1039afjsnaa13a7cca12e";
 
       // Hard‐coded resort → lat/lon map
@@ -657,6 +674,92 @@
           "X-RapidAPI-Key": RAPIDAPI_KEY,
           "X-RapidAPI-Host": "ski-resort-conditions.p.rapidapi.com",
         },
+=======
+        $("#noResultMessage").style.display = "none";
+
+        try {
+          const response = await fetch(
+            `http://localhost:3000/api/weather/search?resort=${encodeURIComponent(resortKey)}`
+          );
+          if (!response.ok) {
+            const err = await response.json();
+            $("#noResultMessage").textContent = err.error || "Resort not found.";
+            $("#noResultMessage").style.display = "block";
+            toggleSkeleton(false);
+            return;
+          }
+
+          const data = await response.json();
+
+          // Populate Resort Header
+          $("#resortName").textContent = data.name;
+          if (data.rating !== null && data.rating !== undefined) {
+            $("#resortRating").innerHTML =
+              data.rating + " <i class='fas fa-star text-warning'></i>";
+          } else {
+            $("#resortRating").textContent = "";
+          }
+          if (data.recommendation) {
+            $("#recommendation").textContent = data.recommendation;
+            $("#recommendation").style.display = "inline-block";
+          } else {
+            $("#recommendation").textContent = "";
+            $("#recommendation").style.display = "none";
+          }
+
+          // Populate Slope & Lifts
+          $("#slopeQuality").textContent  = data.slope.quality;
+          $("#groomedStatus").textContent = `${data.slope.groomed}% groomed`;
+          $("#groomedBar").style.width    = data.slope.groomed + "%";
+          $("#runsOpen").textContent      = data.slope.runsOpen;
+          $("#liftsOpen").textContent     = data.slope.liftsOpen;
+
+          // Populate Weather & Snow
+          $("#currentTemp").textContent  = data.weather.currentTemp + " °C";
+          $("#snow24h").textContent      = data.weather.snow24h + " cm";
+          $("#snow3d").textContent       = data.weather.snow3d + " cm";
+          $("#snow7d").textContent       = data.weather.snow7d + " cm";
+          $("#bluebirdDays").textContent = data.weather.bluebirdDays;
+
+          // Populate 7-day Forecast
+          const grid = $("#forecastGrid");
+          grid.innerHTML = "";
+          data.forecast.forEach((f) => {
+            const col = document.createElement("div");
+            col.className = "col-6 col-md-4 col-lg-2 reveal";
+            col.innerHTML = `
+              <div class="info-card forecast-card p-3 text-center">
+                <div class="fw-semibold mb-1">${f.day}</div>
+                <div class="display-6">${f.icon}</div>
+                <small class="text-muted">${f.lo} / ${f.hi} °C</small>
+              </div>
+            `;
+            grid.appendChild(col);
+          });
+
+          // Show sections & trigger reveal animations
+          $("#resortHeader").style.display   = "block";
+          $("#statusSection").style.display  = "block";
+          $("#forecastSection").style.display = "block";
+
+          revealObs.disconnect();
+          document.querySelectorAll(".reveal").forEach((el) =>
+            revealObs.observe(el)
+          );
+        } catch (error) {
+          console.error("Error in render():", error);
+          alert("An unexpected error occurred.");
+        } finally {
+          toggleSkeleton(false);
+        }
+      }
+
+      // Search form handler
+      $("#searchForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const resortKey = $("#resortInput").value.trim();
+        render(resortKey);
+>>>>>>> 393e90068c8f1905fee309792eb8f89e82a2e172
       });
       if (!skiRes.ok) {
         $("#noResultMessage").textContent =
@@ -667,6 +770,7 @@
       }
       const resortData = await skiRes.json();
 
+<<<<<<< HEAD
       // 7) Build the single `data` object your UI expects…
       const data = {
         name: resortKey,
@@ -725,6 +829,14 @@
     $("#year").textContent = new Date().getFullYear();
     render("Zermatt"); // default
   })();
+=======
+      // Fill footer year
+      $("#year").textContent = new Date().getFullYear();
+
+      // Default load
+      render("Zermatt");
+    })();
+>>>>>>> 393e90068c8f1905fee309792eb8f89e82a2e172
   </script>
 </body>
 </html>
