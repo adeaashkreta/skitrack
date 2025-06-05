@@ -12,15 +12,21 @@
 <link href="../css/style.css" rel="stylesheet"/>
 </head>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-fetch('http://localhost:3000/api/weather')
-  .then(r => r.json())
-  .then(renderWeather)
-  .catch(err => console.error('Weather fetch error:', err));
-  const list = document.getElementById('weatherList');
-if (!list)              // prevents “weatherList is not defined”
-});
+ document.addEventListener('DOMContentLoaded', () => {
+  fetch('http://localhost:3000/api/weather')
+    .then(response => response.json())
+    .then(data => {
+      renderWeather(data);
+    })
+    .catch(err => console.error('Weather fetch error:', err));
 
+  const list = document.getElementById('weatherList');
+  if (!list) {
+    console.warn('Element with id="weatherList" not found.');
+    return;
+  }
+
+});
 </script>
 
 <body>
