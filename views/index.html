@@ -5,12 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ski Track - Find Your Perfect Ski Resort</title>
   <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Your Custom CSS -->
-  <link rel="stylesheet" href="../css/style.css"/>
+<link href="../css/style.css" rel="stylesheet"/>
 </head>
+<script>
+fetch('http://localhost:3000/api/weather/highlights')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('coldest').innerHTML = `❄️ Coldest: ${data.coldest.name} – ${data.coldest.temp}°C`;
+    document.getElementById('windiest').innerHTML = `💨 Windiest: ${data.windiest.name} – ${data.windiest.wind} km/h`;
+    document.getElementById('sunniest').innerHTML = `🌞 Sunniest: ${data.sunniest.name} – ${data.sunniest.temp}°C`;
+  })
+  .catch(err => console.error('Weather fetch error:', err));
+  fetch('http://localhost:3000/api/weather/picks')
+    .then(res => res.json())
+    .then(data => {
+      const picksList = document.getElementById("top-picks-list");
+      picksList.innerHTML = ""; // Clear old loading items
+      data.forEach(resort => {
+        const item = document.createElement("li");
+        item.textContent = `⛷ ${resort.name} – ${resort.condition}`;
+        picksList.appendChild(item);
+      });
+    })
+    .catch(err => {
+      console.error("Error loading top picks:", err);
+      document.getElementById("top-picks-list").innerHTML = "<li>Unable to load top picks.</li>";
+    });
+</script>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
@@ -251,20 +277,20 @@
         <div class="weather-sidebar">
           <h3>Today's Highlights</h3>
           <ul>
-            <li>❄️ Coldest: Zermatt – -5°C</li>
-            <li>🌬 Windiest: St. Moritz – Strong</li>
-            <li>☀️ Sunniest: Brezovica</li>
+            <li id="coldest">❄️ Coldest: Loading...</li>
+            <li id="windiest">💨 Windiest: Loading...</li>
+            <li id="sunniest">🌞 Sunniest: Loading...</li>
           </ul>
         </div>
     
+        
         <div class="weather-sidebar secondary">
           <h3>Our Top Picks for the Week</h3>
-          <ul>
-            <li>⛷ Zermatt – Excellent snow & sunny</li>
-            <li>🏔 St. Moritz – Fresh powder & events</li>
-            <li>🎿 Brezovica – Great for beginners</li>
-            <li>🏔 Lorem Ipsum – Great for Intermidiate</li>
-            <li>⛷ Lorem Ipsum – Excellent snow conditions</li>
+          <ul id="top-picks-list">
+            <li>⛷ Loading top picks...</li>
+            <li>🏔 Loading top picks...</li>
+            <li>🎿 Loading top picks...</li>
+            <li>🏔 Loading top picks...</li>
           </ul>
         </div>
       </div>
