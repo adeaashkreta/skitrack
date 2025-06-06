@@ -4,10 +4,12 @@ import ApresSki from './pages/ApresSki';
 import EventPage from './pages/EventPage';
 import FamilyFun from './pages/FamilyFun';
 import Resorts from './pages/Resorts';
+import Login from "./pages/Login";
+import Logout from './pages/logout';
+import Register from "./pages/register";
 
 
-import "./assets/css/bootstrap.css";
-import "./assets/css/style.css";
+
 
 
 
@@ -22,6 +24,10 @@ function App() {
           < Route path="/EventPage" element={<EventPage />} />
           <Route path="/FamilyFun" element={<FamilyFun />} />
           <Route path="/Resorts" element={<Resorts />} />
+           <Route path="/login" element={<Login />} />
+           <Route path="/logout" element={<Logout />} />
+           <Route path="/register" element={<Register />} />
+       
        
        
       </Routes>
