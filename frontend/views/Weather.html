@@ -571,9 +571,9 @@
 
   <!-- JS (updated to call your back end) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
+<script>
     (() => {
-      // Your backend URL - adjust port if needed
+      // Your backend URL
       const API_BASE_URL = 'http://localhost:3000';
       
       // Shortcut selectors
@@ -598,12 +598,15 @@
       }
 
       // Generate realistic ski resort data based on season
-      function generateSkiResortData(weatherData) {
+      function generateSkiResortData(weatherData, stats) {
         const today = new Date();
         const month = today.getMonth(); // 0-11
         
         // Determine if it's ski season (November through April)
         const isSkiSeason = month >= 10 || month <= 3;
+        
+        // Use stats from backend or default values
+        const resortStats = stats || { totalRuns: 100, totalLifts: 25 };
         
         if (!isSkiSeason) {
           // Off-season - generate summer conditions
@@ -615,34 +618,30 @@
             bluebirdDays: weatherData.forecast.filter(d => d.icon === "☀️").length,
             slopeQuality: "Closed - Off Season",
             groomedPercent: 0,
-            runsOpen: "0/100",
-            liftsOpen: "0/25",
+            runsOpen: `0/${resortStats.totalRuns}`,
+            liftsOpen: `0/${resortStats.totalLifts}`,
             recommendation: "Visit us next winter!"
           };
         }
         
         // Ski season - generate realistic winter conditions
-        let baseTemp = -5; // Base temperature for ski resorts in winter
-        let snowBase = 120; // Base snow depth
+        let baseTemp = -5;
+        let snowBase = 120;
         
-        // Add some randomness
-        const tempVariation = Math.random() * 8 - 4; // -4 to +4 degrees
+        const tempVariation = Math.random() * 8 - 4;
         const currentTemp = Math.round(baseTemp + tempVariation);
         
-        // Generate snow data based on weather patterns
         let snow24h = 0;
         let snow3d = 0;
         let snow7d = 0;
         let bluebirdDays = 0;
         
-        // Check each day's forecast
         weatherData.forecast.forEach((day, idx) => {
-          // In winter, cloudy/rainy days often mean snow at altitude
           const precipIcons = ["🌧", "🌨", "❄️", "🌦", "⛈", "🌩"];
           const clearIcons = ["☀️", "🌤"];
           
           if (precipIcons.includes(day.icon) || day.minTemp < 2) {
-            const dailySnow = 5 + Math.random() * 20; // 5-25cm per snow day
+            const dailySnow = 5 + Math.random() * 20;
             if (idx === 0) snow24h = Math.round(dailySnow);
             if (idx < 3) snow3d += dailySnow;
             snow7d += dailySnow;
@@ -653,17 +652,17 @@
           }
         });
         
-        // If no snow in forecast, still show some recent snow (it's a ski resort!)
         if (snow24h === 0 && Math.random() > 0.6) {
-          snow24h = Math.round(2 + Math.random() * 8); // 2-10cm
+          snow24h = Math.round(2 + Math.random() * 8);
         }
         
         snow3d = Math.round(snow3d || snow24h * 2.5);
         snow7d = Math.round(snow7d || snow3d * 2);
         
-        // Generate slope conditions
-        const openPercent = 75 + Math.random() * 20; // 75-95% open
-        const groomedPercent = Math.round(65 + Math.random() * 20); // 65-85% groomed
+        const openPercent = 75 + Math.random() * 20;
+        const groomedPercent = Math.round(65 + Math.random() * 20);
+        const openRuns = Math.round(resortStats.totalRuns * openPercent / 100);
+        const openLifts = Math.round(resortStats.totalLifts * openPercent / 100);
         
         let slopeQuality = "Good";
         if (snow24h > 15) slopeQuality = "Fresh Powder!";
@@ -683,8 +682,8 @@
           bluebirdDays,
           slopeQuality,
           groomedPercent,
-          runsOpen: `${Math.round(openPercent)}/100`,
-          liftsOpen: `${Math.round(openPercent * 0.25)}/25`,
+          runsOpen: `${openRuns}/${resortStats.totalRuns}`,
+          liftsOpen: `${openLifts}/${resortStats.totalLifts}`,
           recommendation
         };
       }
@@ -715,35 +714,35 @@
             return;
           }
           
-          const weatherData = await weatherResponse.json();
+          const data = await weatherResponse.json();
           
-          // Generate realistic ski resort data
-          const skiData = generateSkiResortData(weatherData);
+          // Use data from backend - it already has everything we need
+          // Backend sends: name, rating, recommendation, slope, weather, forecast, resortStats
+          
+                  $("#resortName").textContent    = data.name;
+        $("#resortRating").innerHTML    = data.rating
+          ? data.rating + ' <i class="fas fa-star text-warning"></i>'
+          : '';
+        $("#recommendation").textContent = data.recommendation || '';
 
-          // Populate UI with data
-          $("#resortName").textContent = weatherData.resort;
-          $("#resortRating").innerHTML = "⭐⭐⭐⭐⭐";
-          $("#recommendation").textContent = skiData.recommendation;
+        // Populate Slope & Lifts (totals from backend)
+        $("#slopeQuality").textContent  = data.slope.quality;
+        $("#groomedStatus").textContent = `${data.slope.groomed}% Groomed`;
+        $("#groomedBar").style.width    = `${data.slope.groomed}%`;
+        $("#runsOpen").textContent      = `${data.totalRuns} runs total`;
+        $("#liftsOpen").textContent     = `${data.totalLifts} lifts total`;
+
+        // Populate Weather & Snow
+        $("#currentTemp").textContent  = `${data.weather.currentTemp}°C`;
+        $("#snow24h").textContent      = `${data.weather.snow24h} cm`;
+        $("#snow3d").textContent       = `${data.weather.snow3d} cm`;
+        $("#snow7d").textContent       = `${data.weather.snow7d} cm`;
+        $("#bluebirdDays").textContent = `${data.weather.bluebirdDays} days`;
           
-          // Slope data
-          $("#slopeQuality").textContent = skiData.slopeQuality;
-          $("#groomedStatus").textContent = `${skiData.groomedPercent}% Groomed`;
-          $("#groomedBar").style.width = `${skiData.groomedPercent}%`;
-          $("#runsOpen").textContent = `${skiData.runsOpen} Runs Open`;
-          $("#liftsOpen").textContent = `${skiData.liftsOpen} Lifts Open`;
-          
-          // Weather data
-          $("#currentTemp").textContent = `${skiData.currentTemp}°C`;
-          $("#snow24h").textContent = `${skiData.snow24h} cm`;
-          $("#snow3d").textContent = `${skiData.snow3d} cm`;
-          $("#snow7d").textContent = `${skiData.snow7d} cm`;
-          $("#bluebirdDays").textContent = `${skiData.bluebirdDays} days`;
-          
-          // Forecast - adjust temperatures for ski resort altitude
+          // Forecast
           const forecastHTML = `
             <div class="d-flex justify-content-center flex-wrap gap-2">
-              ${weatherData.forecast.map(day => {
-                // Convert emoji to weather icon URL
+              ${data.forecast.map(day => {
                 const iconMap = {
                   "☀️": "01d",
                   "🌤": "02d",
@@ -764,8 +763,8 @@
                 const isSkiSeason = month >= 10 || month <= 3;
                 const altitudeAdjustment = isSkiSeason ? -10 : -5;
                 
-                const adjustedMax = Math.round(day.maxTemp + altitudeAdjustment);
-                const adjustedMin = Math.round(day.minTemp + altitudeAdjustment);
+                const adjustedMax = Math.round(day.hi + altitudeAdjustment);
+                const adjustedMin = Math.round(day.lo + altitudeAdjustment);
                 
                 return `
                   <div class="forecast-item">
@@ -796,7 +795,7 @@
           
           // Book button functionality
           $("#bookBtn").onclick = () => {
-            alert(`Booking for ${weatherData.resort} - Feature coming soon!`);
+            alert(`Booking for ${data.name} - Feature coming soon!`);
           };
           
         } catch (error) {
@@ -832,4 +831,3 @@
   </script>
 </body>
 </html>
-

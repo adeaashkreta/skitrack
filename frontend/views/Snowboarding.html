@@ -74,16 +74,35 @@
       text-align: center;
       margin-top: 40px;
     }
+    .custom-subscribe-btn {
+  background-color: #5bc0de ;
+  border-color: #5bc0de ;
+  color: white ;
+}
 
+.custom-subscribe-btn:hover {
+  background-color: #31b0d5 ;
+  border-color: #31b0d5 ;
+}
+
+ .nav-link.active {
+  color:#5bc0de !important;  
+}
+
+#searchIcon:hover i {
+  color: #2a416d!important;  
+}
 
 
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container nav-flex">
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #2a416d; margin: 0; padding: 0;">
+  <div class="container-fluid d-flex justify-content-between align-items-center" style="padding-left: 16px; padding-right: 16px;">
+    
+    <!-- LOGO (majtas) -->
     <div class="logo d-flex align-items-center">
       <a href="index.html">
         <img src="../views/../images/logo.png" alt="Ski Track Logo" class="img-fluid" style="width: 80px; height: 80px;" />
@@ -92,23 +111,42 @@
         <span>Ski Track</span>
       </a>        
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+    <!-- Navbar toggler për mobile -->
+    <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="nav-links navbar-nav ms-auto">
+
+    <!-- NAVBAR LINKS + SEARCH + PROFILE ICON (djathtas) -->
+    <div class="collapse navbar-collapse d-flex justify-content-end align-items-center" id="navbarNav">
+      <ul class="nav-links navbar-nav me-3">
         <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="Resorts.html">Resorts</a></li>
         <li class="nav-item"><a class="nav-link" href="weather.html" id="weather-link">Weather</a></li>
         <li class="nav-item"><a class="nav-link" href="#">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
       </ul>
+
+      <!-- SEARCH BAR -->
+      <form class="d-flex me-2">
+        <input class="form-control form-control-sm me-2" type="search" placeholder="Search..." id="searchInput">
+        <button class="btn btn-sm btn-outline-light" type="submit" id="searchIcon">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+
+      <!-- PROFILE ICON -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="login.html" id="profileIcon" title="Profile" onclick="toggleModal()">
+            <i class="fa fa-user"></i>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
 
-
-  
 
 <!-- Tracks Availability -->
 <section class="track-status" style="margin-top: 10px;">
@@ -308,41 +346,33 @@
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer bg-dark text-light py-4">
-  <div class="container footer-flex d-flex flex-column flex-md-row justify-content-between align-items-center">
-    
-    <span class="footer-left mb-2 mb-md-0">
-      © 2024 Ski Track. All rights reserved.
-    </span>
-    
-    <section class="newsletter-section mb-2 mb-md-0">
-      <div class="newsletter-container">
-        <h3 class="h6">Subscribe to our Ski Track Newsletter</h3>
-        <form id="newsletterForm" class="d-flex" onsubmit="subscribeNewsletter(event)">
-          <input type="email" id="newsletterEmail" class="form-control me-2" placeholder="Your email address..." required>
-          <button type="submit" class="btn btn-primary"><i class="fas fa-envelope"></i> Subscribe</button>
-        </form>
-        <div class="newsletter-message" id="newsletterMessage"></div>
+ <!-- Footer -->
+    <footer class="footer bg-dark text-light py-4">
+      <div class="container footer-flex d-flex flex-column flex-md-row justify-content-between align-items-center g-3">
+        <span class="footer-left mb-2 mb-md-0">© 2024 Ski Track. All rights reserved.</span>
+     <section class="newsletter-section mb-2 mb-md-0 text-center">
+  <div class="newsletter-container">
+    <h3 class="h6 mb-3 text-center">Subscribe to our Ski Track Newsletter</h3>
+    <form class="d-flex justify-content-center flex-wrap" onsubmit="event.preventDefault()">
+      <div class="input-group">
+        <input type="email" class="form-control no-radius" placeholder="Your email address..." required />
+        <button type="submit" class="btn btn-primary no-radius custom-subscribe-btn">
+          <i class="fas fa-envelope"></i> Subscribe
+        </button>
       </div>
-    </section>
-    
-    <span class="footer-right">
-      <a href="https://www.facebook.com/" target="_blank" class="text-light me-2">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.instagram.com/" target="_blank" class="text-light me-2">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://x.com/" target="_blank" class="text-light me-2">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://al.linkedin.com/" target="_blank" class="text-light">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </span>
+    </form>
   </div>
-</footer>
+</section>
+        <span class="footer-right d-flex gap-2">
+          <a href="https://www.facebook.com/" target="_blank" class="text-light"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" class="text-light"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/" target="_blank" class="text-light"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com/" target="_blank" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+        </span>
+      </div>
+    </footer>
+
+
 
 
 <button onclick="scrollToTop()" class="back-to-top btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow" id="backToTopBtn" title="Go to top">
