@@ -5,8 +5,30 @@ require('dotenv').config(); // Loads SLOPE_API_KEY from .env
 // //
 // ───── In-Memory Cache for Open-Meteo Calls ─────
 //
+
+
 const wxCache = {};
 const TTL = 10 * 60 * 1000; // 10 minutes
+
+
+// Kto jane mockups temporary per arsye se nuk ka naj menyre per me pull this data prej open mateo
+// vetem me scrape mundet me u bo, por per mos me e ngarku file e lash kshtu 
+const resortStats = {
+  "Zermatt": { totalRuns: 200, totalLifts: 38 },
+  "Brezovica": { totalRuns: 16, totalLifts: 5 },
+  "Val Thorens": { totalRuns: 150, totalLifts: 31 },
+  "Val d'Isère": { totalRuns: 155, totalLifts: 42 },
+  "Courchevel": { totalRuns: 150, totalLifts: 58 },
+  "Verbier": { totalRuns: 200, totalLifts: 35 },
+  "St. Moritz": { totalRuns: 163, totalLifts: 23 },
+  "Chamonix": { totalRuns: 115, totalLifts: 47 },
+  "Aspen": { totalRuns: 103, totalLifts: 8 },
+  "Whistler": { totalRuns: 200, totalLifts: 37 },
+  "Bansko": { totalRuns: 42, totalLifts: 16 },
+  "Borovets": { totalRuns: 37, totalLifts: 13 },
+  // Add more resorts as needed
+};
+
 
 const cached = (key, fn) => {
   const hit = wxCache[key];
@@ -51,7 +73,7 @@ router.get('/search', async (req, res) => {
         .json({ error: 'Missing "resort" query parameter.' });
     }
 
-  
+
     const allResorts = require('../data/resorts.json');
     const resortObj = allResorts.find(r =>
       r.name.toLowerCase().startsWith(resort.toLowerCase())
@@ -149,35 +171,40 @@ router.get('/search', async (req, res) => {
       return '❔'; // Fallback for unknown codes
     }
 
-    const forecastArr = daily.time.map((dateStr, idx) => {
-      const dateObj = new Date(dateStr);
-      const weekdayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-      const dayName = weekdayNames[dateObj.getUTCDay()];
-      return {
-        day:  dayName,
-        icon: weatherCodeToIcon(daily.weathercode[idx]),
-        hi:   daily.temperature_2m_max[idx],
-        lo:   daily.temperature_2m_min[idx]
-      };
-    });
+const forecastArr = daily.time.map((dateStr, idx) => {
+  const dateObj = new Date(dateStr);
+  const weekdayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  return {
+    day:  weekdayNames[dateObj.getUTCDay()],
+    icon: weatherCodeToIcon(daily.weathercode[idx]),
+    lo:   daily.temperature_2m_min[idx],
+    hi:   daily.temperature_2m_max[idx]
+  };
+});
 
-    const result = {
-  name:           `${resortObj.name}`,
-  rating: resortObj.rating || null,
-  recommendation: resortObj.recommendation || '',
-  slope:          slopeData,
+// ─── Lookup stats once ───
+const baseName   = resortObj.name.split(',')[0].trim();  // "Zermatt"
+const statsEntry = resortStats[baseName] || { totalRuns: 0, totalLifts: 0 };
+
+// ─── Assemble final JSON payload ───
+const result = {
+  name:            `${resortObj.name}`,
+  rating:          resortObj.rating || null,
+  recommendation:  resortObj.recommendation || '',
+  slope:           slopeData,
   weather: {
-    currentTemp:  Math.round(cw.temperature),
-    snow24h:      Math.round(snow24h),
-    snow3d:       Math.round(snow3d),
-    snow7d:       Math.round(snow7d),
-    bluebirdDays: bluebirdDays
+    currentTemp:   Math.round(cw.temperature),
+    snow24h:       Math.round(snow24h),
+    snow3d:        Math.round(snow3d),
+    snow7d:        Math.round(snow7d),
+    bluebirdDays:  bluebirdDays
   },
-  forecast:       forecastArr
+  forecast:        forecastArr,
+  totalRuns:       statsEntry.totalRuns,
+  totalLifts:      statsEntry.totalLifts
 };
 
-
-    return res.json(result);
+return res.json(result);
   } catch (err) {
     console.error('[/api/weather/search] error:', err.message);
     return res.status(500).json({ error: 'Internal server error.' });
@@ -185,5 +212,4 @@ router.get('/search', async (req, res) => {
 });
 
 module.exports = router;
-
 
