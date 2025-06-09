@@ -174,6 +174,15 @@ body, html {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+.custom-hero-btn {
+  background-color: #5bc0de !important;
+  border-color: #5bc0de !important;
+  color: white !important;
+}
+.custom-hero-btn:hover {
+  background-color: #31b0d5 !important;
+  border-color: #31b0d5 !important;
+}
 
 .top-resorts-container {
   max-width: 1400px;
@@ -439,7 +448,6 @@ body, html {
   font-weight: 700;
   font-size: 1.03em;
 }
-
 
 
 /* Newsletter */
@@ -978,7 +986,24 @@ footer {
   .footer-flex { flex-direction: column; gap: 7px;}
   .carousel-slide .slide-content { padding: 13px;}
 }
+.custom-subscribe-btn {
+  background-color: #5bc0de ;
+  border-color: #5bc0de ;
+  color: white ;
+}
 
+.custom-subscribe-btn:hover {
+  background-color: #31b0d5 ;
+  border-color: #31b0d5 ;
+}
+
+ .nav-link.active {
+  color:#5bc0de !important;
+}
+
+#searchIcon:hover i {
+  color: #2a416d!important;
+}
 /* A - Jon Additions */
 
 
@@ -1008,7 +1033,7 @@ footer {
       }
       #nearby-resorts-section .snowflake {
         position: absolute;
-        color: var(--accent, #0d6efd);
+        color: var(--accent,#5bc0de);
         opacity: 0.15;
         animation: float 14s linear infinite;
       }
@@ -1072,7 +1097,7 @@ footer {
 }
 .highlight-box {
   background-color: #fff;
-  border-left: 5px solid #007bff;
+  border-left: 5px solid #5bc0de;
   padding: 20px;
   margin-top: 40px;
   border-radius: 8px;

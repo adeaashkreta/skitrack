@@ -131,7 +131,7 @@ const ResortsPage = () => {
           <p className="lead mb-4">
             From the Alps to Aspen – discover your perfect mountain getaway.
           </p>
-          <a href="#featured-resorts" className="btn btn-primary btn-lg">
+          <a href="#featured-resorts" className="btn btn-primary btn-lg custom-hero-btn">
             <i className="fas fa-skiing me-2"></i>Discover Resorts
           </a>
         </div>
@@ -186,7 +186,7 @@ const ResortsPage = () => {
                     <div className="mt-auto">
                       <div className="d-flex justify-content-between align-items-center mb-2">
                         <span className="price-tag">{resort.price}</span>
-                        <button className="btn btn-primary">Book Now</button>
+                        <button className="btn btn-primary custom-hero-btn">Book Now</button>
                       </div>
                       <div className="d-flex gap-3 mt-2 feature-icons">
                         <i className="fas fa-snowflake"></i>
