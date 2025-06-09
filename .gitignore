@@ -1,0 +1,9 @@
+# Node.js dependencies
+node_modules/
+.env
+
+# VS Code settings
+.vscode/
+
+# Logs and other temporary files
+*.log
