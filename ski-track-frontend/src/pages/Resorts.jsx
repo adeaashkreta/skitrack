@@ -186,7 +186,7 @@ const ResortsPage = () => {
                     <div className="mt-auto">
                       <div className="d-flex justify-content-between align-items-center mb-2">
                         <span className="price-tag">{resort.price}</span>
-                        <button className="btn btn-primary">Book Now</button>
+                        <button className="btn btn-primary custom-hero-btn">Book Now</button>
                       </div>
                       <div className="d-flex gap-3 mt-2 feature-icons">
                         <i className="fas fa-snowflake"></i>
