@@ -6,7 +6,15 @@
   --white: #fff;
   --gray: #e6ecf2;
 }
-
+.custom-hero-btn {
+  background-color: #5bc0de !important;
+  border-color: #5bc0de !important;
+  color: white !important;
+}
+.custom-hero-btn:hover {
+  background-color: #31b0d5 !important;
+  border-color: #31b0d5 !important;
+}
 /* General */
 body, html {
   margin: 0; padding: 0;

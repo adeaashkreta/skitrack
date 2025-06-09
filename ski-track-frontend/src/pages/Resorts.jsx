@@ -131,7 +131,7 @@ const ResortsPage = () => {
           <p className="lead mb-4">
             From the Alps to Aspen – discover your perfect mountain getaway.
           </p>
-          <a href="#featured-resorts" className="btn btn-primary btn-lg">
+          <a href="#featured-resorts" className="btn btn-primary btn-lg custom-hero-btn">
             <i className="fas fa-skiing me-2"></i>Discover Resorts
           </a>
         </div>
