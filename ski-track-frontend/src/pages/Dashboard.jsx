@@ -61,7 +61,7 @@ function Dashboard() {
           >
             <ul className="nav-links navbar-nav me-3">
               <li className="nav-item">
-                <Link className="nav-link active" to="/">
+                <Link className="nav-link active" to="/Index">
                   Home
                 </Link>
               </li>
@@ -76,12 +76,12 @@ function Dashboard() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link className="nav-link" to="/AboutUs">
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link className="nav-link" to="/ContactUs">
                   Contact
                 </Link>
               </li>
