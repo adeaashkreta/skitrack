@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import "../assets/Css/form.css";
-
+import "../assets/css/form.css";
 
 export default function InsertUser() {
   const [form, setForm] = useState({
@@ -40,55 +39,82 @@ export default function InsertUser() {
 
   return (
     <>
-      
-      <div className="container">
-        <div className="form-box">
+      <div className="insertuser-container">
+        <div className="insertuser-form-box">
           <form onSubmit={handleSubmit}>
             <h1>Add a User</h1>
-            <div className="input-group">
-              <div className="input-group-left">
-                <div className="input-field left">
-                  <input type="text" placeholder="First Name" value={form.firstName}
-                    onChange={e => setForm({ ...form, firstName: e.target.value })} />
-                  <div className="error-message">{errors.firstName}</div>
+            <div className="insertuser-input-group">
+              <div className="insertuser-input-group-left">
+                <div className="insertuser-input-field left">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    value={form.firstName}
+                    onChange={e => setForm({ ...form, firstName: e.target.value })}
+                  />
+                  <div className="insertuser-error-message">{errors.firstName}</div>
                 </div>
-                <div className="input-field left">
-                  <input type="text" placeholder="Last Name" value={form.lastName}
-                    onChange={e => setForm({ ...form, lastName: e.target.value })} />
-                  <div className="error-message">{errors.lastName}</div>
+                <div className="insertuser-input-field left">
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    value={form.lastName}
+                    onChange={e => setForm({ ...form, lastName: e.target.value })}
+                  />
+                  <div className="insertuser-error-message">{errors.lastName}</div>
                 </div>
-                <div className="input-field left">
-                  <input type="text" placeholder="Email" value={form.email}
-                    onChange={e => setForm({ ...form, email: e.target.value })} />
-                  <div className="error-message">{errors.email}</div>
+                <div className="insertuser-input-field left">
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    value={form.email}
+                    onChange={e => setForm({ ...form, email: e.target.value })}
+                  />
+                  <div className="insertuser-error-message">{errors.email}</div>
                 </div>
-                <div className="input-field left">
-                  <input type="password" placeholder="Password" value={form.password}
-                    onChange={e => setForm({ ...form, password: e.target.value })} />
-                  <div className="error-message">{errors.password}</div>
+                <div className="insertuser-input-field left">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    value={form.password}
+                    onChange={e => setForm({ ...form, password: e.target.value })}
+                  />
+                  <div className="insertuser-error-message">{errors.password}</div>
                 </div>
               </div>
 
-              <div className="input-group-right">
-                <div className="input-field right">
-                  <input type="text" placeholder="Phone Number" value={form.phoneNumber}
-                    onChange={e => setForm({ ...form, phoneNumber: e.target.value })} />
-                  <div className="error-message">{errors.phoneNumber}</div>
+              <div className="insertuser-input-group-right">
+                <div className="insertuser-input-field right">
+                  <input
+                    type="text"
+                    placeholder="Phone Number"
+                    value={form.phoneNumber}
+                    onChange={e => setForm({ ...form, phoneNumber: e.target.value })}
+                  />
+                  <div className="insertuser-error-message">{errors.phoneNumber}</div>
                 </div>
-                <div className="input-field right">
-                  <input type="date" placeholder="Birth Date" value={form.birthDate}
-                    onChange={e => setForm({ ...form, birthDate: e.target.value })} />
-                  <div className="error-message">{errors.birthDate}</div>
+                <div className="insertuser-input-field right">
+                  <input
+                    type="date"
+                    placeholder="Birth Date"
+                    value={form.birthDate}
+                    onChange={e => setForm({ ...form, birthDate: e.target.value })}
+                  />
+                  <div className="insertuser-error-message">{errors.birthDate}</div>
                 </div>
-                <div className="input-field right">
-                  <input type="text" placeholder="Role" value={form.role}
-                    onChange={e => setForm({ ...form, role: e.target.value })} />
-                  <div className="error-message">{errors.role}</div>
+                <div className="insertuser-input-field right">
+                  <input
+                    type="text"
+                    placeholder="Role"
+                    value={form.role}
+                    onChange={e => setForm({ ...form, role: e.target.value })}
+                  />
+                  <div className="insertuser-error-message">{errors.role}</div>
                 </div>
               </div>
             </div>
-            <div className="btn-group">
-              <button type="submit" className="btn" style={{ backgroundColor: '#5bc0de', color: 'white' }}>Submit</button>
+            <div className="insertuser-btn-group">
+              <button type="submit" className="insertuser-btn">Submit</button>
             </div>
           </form>
         </div>

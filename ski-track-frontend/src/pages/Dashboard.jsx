@@ -129,7 +129,7 @@ function Dashboard() {
         <div className="dashboard-container">
           <div className="box">
             <div className="box1">
-              <Link to="/usertable" style={{ textDecoration: "none" }}>
+              <Link to="/UserTable" style={{ textDecoration: "none" }}>
                 <button className="dashboard-button">VIEW USERS</button>
               </Link>
             </div>

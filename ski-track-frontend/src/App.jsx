@@ -13,6 +13,9 @@ import SkiLessons from "./pages/SkiLessons";
 import Snowboarding from "./pages/Snowboarding";
 import Register from "./pages/register";
 import InsertUser from './pages/InsertUser';
+import UserTable from './pages/UserTable';
+import UpdateUser from './pages/UpdateUser';
+import DeleteUser from './pages/DeleteUser';
 
 
 
@@ -39,6 +42,9 @@ function App() {
           <Route path="/Snowboarding" element={<Snowboarding />} />
           <Route path="/register" element={<Register />} />
           <Route path="/InsertUser" element={<InsertUser />} />
+          <Route path="/UserTable" element={<UserTable />} />
+          <Route path="/UpdateUser" element={<UpdateUser />} />
+          <Route path="/DeleteUser" element={<DeleteUser />} />
        
        
        
