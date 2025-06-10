@@ -101,6 +101,24 @@ const Events = () => {
                 'Join our glowing downhill parade and ski under the stars with torches and music.',
               img: '/images/TorchlightDescent.jpg',
               price: '$5'
+            },{
+              title: 'Ice Sculpting Workshop',
+              desc:
+                'Learn the basics of ice sculpting from talented local artists and create your own stunning, unique piece.',
+              img: '/images/icesculpting.jpg',
+              price: '$15'
+            },{
+              title: 'Ski Tricks & Tips Workshop',
+              desc:
+                'An interactive session with professional instructors covering advanced skiing techniques and new tricks.',
+              img: '/images/skitricks.jpg',
+              price: '$12'
+            },{
+              title: 'Stargazing & Mulled Wine',
+              desc:
+                'Spend a magical evening under the stars with a professional astronomer and warm spiced wine.',
+              img: '/images/stargazing.jpg',
+              price: '$10'
             }
           ].map((event, index) => (
             <div className="col-md-4" key={index}>

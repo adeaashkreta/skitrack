@@ -1,16 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../assets/css/bootstrap.css';
-import '../assets/css/style.css';
+import { Link } from "react-router-dom";
+import "../assets/css/dashboard.css";
 
-const Layout = ({ children }) => {
+function Dashboard() {
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
-    alert('Thank you for subscribing!');
+    alert("Thank you for subscribing!");
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -18,11 +16,11 @@ const Layout = ({ children }) => {
       {/* Navbar */}
       <nav
         className="navbar navbar-expand-lg"
-        style={{ backgroundColor: '#2a416d', margin: 0, padding: 0 }}
+        style={{ backgroundColor: "#2a416d", margin: 0, padding: 0 }}
       >
         <div
           className="container-fluid d-flex justify-content-between align-items-center"
-          style={{ paddingLeft: '16px', paddingRight: '16px' }}
+          style={{ paddingLeft: "16px", paddingRight: "16px" }}
         >
           <div className="logo d-flex align-items-center">
             <Link to="/">
@@ -30,12 +28,16 @@ const Layout = ({ children }) => {
                 src="/images/logo.png"
                 alt="Ski Track Logo"
                 className="img-fluid"
-                style={{ width: '80px', height: '80px' }}
+                style={{ width: "80px", height: "80px" }}
               />
             </Link>
             <Link
               to="/"
-              style={{ textDecoration: 'none', color: 'inherit', marginLeft: '8px' }}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                marginLeft: "8px",
+              }}
             >
               <span>Ski Track</span>
             </Link>
@@ -74,12 +76,12 @@ const Layout = ({ children }) => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/AboutUs">
+                <Link className="nav-link" to="#">
                   About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/ContactUs">
+                <Link className="nav-link" to="#">
                   Contact
                 </Link>
               </li>
@@ -123,7 +125,17 @@ const Layout = ({ children }) => {
       </nav>
 
       {/* Main Content */}
-      <main>{children}</main>
+      <main className="dashboard-main">
+        <div className="dashboard-container">
+          <div className="box">
+            <div className="box1">
+              <Link to="/usertable" style={{ textDecoration: "none" }}>
+                <button className="dashboard-button">VIEW USERS</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </main>
 
       {/* Footer */}
       <footer className="footer bg-dark text-light py-4">
@@ -209,6 +221,6 @@ const Layout = ({ children }) => {
       </button>
     </>
   );
-};
+}
 
-export default Layout;
+export default Dashboard;
