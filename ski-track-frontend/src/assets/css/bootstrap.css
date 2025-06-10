@@ -325,21 +325,30 @@ select:disabled {
 [type="reset"],
 [type="submit"],
 button {
-  -webkit-appearance: button;
+  /* 1. Appearance */
+-webkit-appearance: button;
+-moz-appearance: button;
+appearance: button;
 }
+/* 2. Button cursor */
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
 [type="submit"]:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;
 }
+
+/* 3. Remove Firefox inner padding/border */
 ::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
+
+/* 4. Textarea resizing */
 textarea {
   resize: vertical;
 }
+
 fieldset {
   min-width: 0;
   padding: 0;
@@ -376,8 +385,11 @@ legend + * {
 }
 [type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: textfield;
+  -webkit-appearance: textfield;  /* For Chrome, Safari */
+  -moz-appearance: textfield;     /* For Firefox */
+  appearance: textfield;          /* Modern browsers */
 }
+
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -2079,8 +2091,10 @@ textarea.form-control-lg {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
+ print-color-adjust: exact;
+
+ print-color-adjust: exact;
+
 }
 .form-check-input[type="checkbox"] {
   border-radius: 0.25em;
