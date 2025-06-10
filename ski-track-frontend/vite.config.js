@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',  // ose porti ku ndodhet serveri yt backend
+        target: 'http://localhost:3000',  
         changeOrigin: true,
         secure: false,
       },
