@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../assets/css/register.css';
 import Layout from '../components/Layout';
+import api from '../api'; // <-- update this path to your api.js file
 
 const Register = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const Register = () => {
     confirmPassword: '',
     birthDate: '',
     phoneNumber: '',
-    role: '', // <-- Initialize role here
+    role: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -71,31 +72,19 @@ const Register = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await fetch('http://localhost:3000/api/users/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        if (data.message) {
-          setServerError(data.message);
-          if (data.message.toLowerCase().includes('email')) {
-            setErrors((prev) => ({ ...prev, email: data.message }));
-          }
-        } else {
-          setServerError('Registration failed. Please try again.');
-        }
-        return;
-      }
+      const response = await api.post('/users/register', formData);
 
       alert('Registration successful! Please log in.');
       navigate('/login');
     } catch (error) {
-      console.error('Registration error:', error);
-      setServerError('Server error. Please try again later.');
+      if (error.response && error.response.data && error.response.data.message) {
+        setServerError(error.response.data.message);
+        if (error.response.data.message.toLowerCase().includes('email')) {
+          setErrors((prev) => ({ ...prev, email: error.response.data.message }));
+        }
+      } else {
+        setServerError('Registration failed. Please try again.');
+      }
     }
   };
 
@@ -104,9 +93,7 @@ const Register = () => {
       <div className="register-container">
         <div className="register-box">
           <h1>Register</h1>
-          {serverError && (
-            <div className="register-error-message">{serverError}</div>
-          )}
+          {serverError && <div className="register-error-message">{serverError}</div>}
           <form onSubmit={handleSubmit}>
             {/* First Name */}
             <div className="register-form-group">
@@ -120,9 +107,7 @@ const Register = () => {
                 className={errors.firstName ? 'register-input-error' : ''}
                 placeholder="First name"
               />
-              {errors.firstName && (
-                <div className="register-error-message">{errors.firstName}</div>
-              )}
+              {errors.firstName && <div className="register-error-message">{errors.firstName}</div>}
             </div>
 
             {/* Last Name */}
@@ -137,9 +122,7 @@ const Register = () => {
                 className={errors.lastName ? 'register-input-error' : ''}
                 placeholder="Last name"
               />
-              {errors.lastName && (
-                <div className="register-error-message">{errors.lastName}</div>
-              )}
+              {errors.lastName && <div className="register-error-message">{errors.lastName}</div>}
             </div>
 
             {/* Email */}
@@ -154,9 +137,7 @@ const Register = () => {
                 className={errors.email ? 'register-input-error' : ''}
                 placeholder="you@example.com"
               />
-              {errors.email && (
-                <div className="register-error-message">{errors.email}</div>
-              )}
+              {errors.email && <div className="register-error-message">{errors.email}</div>}
             </div>
 
             {/* Password */}
@@ -171,9 +152,7 @@ const Register = () => {
                 className={errors.password ? 'register-input-error' : ''}
                 placeholder="Your secure password"
               />
-              {errors.password && (
-                <div className="register-error-message">{errors.password}</div>
-              )}
+              {errors.password && <div className="register-error-message">{errors.password}</div>}
             </div>
 
             {/* Confirm Password */}
@@ -189,9 +168,7 @@ const Register = () => {
                 placeholder="Confirm your password"
               />
               {errors.confirmPassword && (
-                <div className="register-error-message">
-                  {errors.confirmPassword}
-                </div>
+                <div className="register-error-message">{errors.confirmPassword}</div>
               )}
             </div>
 
@@ -206,9 +183,7 @@ const Register = () => {
                 onChange={handleChange}
                 className={errors.birthDate ? 'register-input-error' : ''}
               />
-              {errors.birthDate && (
-                <div className="register-error-message">{errors.birthDate}</div>
-              )}
+              {errors.birthDate && <div className="register-error-message">{errors.birthDate}</div>}
             </div>
 
             {/* Phone Number */}
@@ -223,9 +198,7 @@ const Register = () => {
                 className={errors.phoneNumber ? 'register-input-error' : ''}
                 placeholder="123456789"
               />
-              {errors.phoneNumber && (
-                <div className="register-error-message">{errors.phoneNumber}</div>
-              )}
+              {errors.phoneNumber && <div className="register-error-message">{errors.phoneNumber}</div>}
             </div>
 
             {/* Role Selection */}
@@ -242,9 +215,7 @@ const Register = () => {
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
               </select>
-              {errors.role && (
-                <div className="register-error-message">{errors.role}</div>
-              )}
+              {errors.role && <div className="register-error-message">{errors.role}</div>}
             </div>
 
             {/* Submit Button */}

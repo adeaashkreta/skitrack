@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../assets/css/login.css';
 import Layout from '../components/Layout';
-import axios from 'axios';
+import api from '../api'; // update path to your api.js
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -32,12 +32,9 @@ const Login = () => {
     if (!validateForm()) return;
 
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/login', {
-        email,
-        password
-      });
+      const res = await api.post('/auth/login', { email, password });
 
-      // Save token and user info
+      // Save token and user info to localStorage
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('role', res.data.user.role);
       localStorage.setItem('email', res.data.user.email);
