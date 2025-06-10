@@ -11,7 +11,7 @@ const resortsRoute = require('./routes/resorts');
 const bookingRoute = require('./routes/booking');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/UserRoutes');
-
+const lessonRoutes = require('./routes/lessonRegistrationRoutes');
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -22,6 +22,7 @@ app.use('/api/resorts', resortsRoute);
 app.use('/api/booking', bookingRoute);
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/lessons', lessonRoutes);
 
 // MongoDB Connection
 const PORT = process.env.PORT || 3000;
