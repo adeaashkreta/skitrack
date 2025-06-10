@@ -225,6 +225,24 @@ const Register = () => {
                 </div>
               )}
             </div>
+            {/* Role Selection */}
+            <div className="register-form-group">
+              <label htmlFor="role">Role</label>
+              <select
+                id="role"
+                name="role"
+                value={formData.role}
+                onChange={handleChange}
+                className={errors.role ? 'register-input-error' : ''}
+              >
+                <option value="">Select a role</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+              {errors.role && (
+                <div className="register-error-message">{errors.role}</div>
+              )}
+            </div>
 
             {/* Submit Button */}
             <button type="submit" className="register-btn">
