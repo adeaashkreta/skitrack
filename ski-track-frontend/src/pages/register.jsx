@@ -14,6 +14,7 @@ const Register = () => {
     confirmPassword: '',
     birthDate: '',
     phoneNumber: '',
+    role: '', // <-- Initialize role here
   });
 
   const [errors, setErrors] = useState({});
@@ -56,6 +57,9 @@ const Register = () => {
       newErrors.phoneNumber = 'Phone number is required!';
     } else if (!/^\d{8,15}$/.test(formData.phoneNumber)) {
       newErrors.phoneNumber = 'Phone must be 8-15 digits!';
+    }
+    if (!formData.role) {
+      newErrors.role = 'Role is required!';
     }
 
     setErrors(newErrors);
@@ -220,11 +224,10 @@ const Register = () => {
                 placeholder="123456789"
               />
               {errors.phoneNumber && (
-                <div className="register-error-message">
-                  {errors.phoneNumber}
-                </div>
+                <div className="register-error-message">{errors.phoneNumber}</div>
               )}
             </div>
+
             {/* Role Selection */}
             <div className="register-form-group">
               <label htmlFor="role">Role</label>
