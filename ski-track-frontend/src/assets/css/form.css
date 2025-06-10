@@ -160,6 +160,13 @@ only screen and (max-width: 500px),
   .insertuser-btn-group {
     text-align: center;
   }
+  .insertuser-success-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 
   #submit {
     width: 100%;
