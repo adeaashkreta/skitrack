@@ -7,7 +7,6 @@ export default function InsertUser() {
     phoneNumber: '', birthDate: '', role: ''
   });
   const [errors, setErrors] = useState({});
-  const [submitError, setSubmitError] = useState('');
 
   const validate = () => {
     const newErrors = {};
@@ -23,32 +22,18 @@ export default function InsertUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitError('');
     const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-    setErrors({});
+    if (Object.keys(validationErrors).length > 0) return setErrors(validationErrors);
 
     try {
-      const res = await fetch('http://localhost:3000/api/users', {
+      const res = await fetch('/api/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
       });
-
-      if (res.ok) {
-        alert('User inserted successfully');
-        // Optionally clear form here if you want:
-        // setForm({ firstName: '', lastName: '', email: '', password: '', phoneNumber: '', birthDate: '', role: '' });
-      } else {
-        const data = await res.json();
-        setSubmitError(data.message || 'Failed to insert user');
-      }
+      if (res.ok) alert('User inserted successfully');
     } catch (err) {
       console.error(err);
-      setSubmitError('Network error, please try again later');
     }
   };
 
@@ -58,9 +43,6 @@ export default function InsertUser() {
         <div className="insertuser-form-box">
           <form onSubmit={handleSubmit}>
             <h1>Add a User</h1>
-
-            {submitError && <div className="insertuser-error-message">{submitError}</div>}
-
             <div className="insertuser-input-group">
               <div className="insertuser-input-group-left">
                 <div className="insertuser-input-field left">
@@ -72,7 +54,6 @@ export default function InsertUser() {
                   />
                   <div className="insertuser-error-message">{errors.firstName}</div>
                 </div>
-
                 <div className="insertuser-input-field left">
                   <input
                     type="text"
@@ -82,7 +63,6 @@ export default function InsertUser() {
                   />
                   <div className="insertuser-error-message">{errors.lastName}</div>
                 </div>
-
                 <div className="insertuser-input-field left">
                   <input
                     type="text"
@@ -92,7 +72,6 @@ export default function InsertUser() {
                   />
                   <div className="insertuser-error-message">{errors.email}</div>
                 </div>
-
                 <div className="insertuser-input-field left">
                   <input
                     type="password"
@@ -114,7 +93,6 @@ export default function InsertUser() {
                   />
                   <div className="insertuser-error-message">{errors.phoneNumber}</div>
                 </div>
-
                 <div className="insertuser-input-field right">
                   <input
                     type="date"
@@ -124,21 +102,17 @@ export default function InsertUser() {
                   />
                   <div className="insertuser-error-message">{errors.birthDate}</div>
                 </div>
-
                 <div className="insertuser-input-field right">
-                  <select
+                  <input
+                    type="text"
+                    placeholder="Role"
                     value={form.role}
                     onChange={e => setForm({ ...form, role: e.target.value })}
-                  >
-                    <option value="">Select Role</option>
-                    <option value="user">User</option>
-                    <option value="admin">Admin</option>
-                  </select>
+                  />
                   <div className="insertuser-error-message">{errors.role}</div>
                 </div>
               </div>
             </div>
-
             <div className="insertuser-btn-group">
               <button type="submit" className="insertuser-btn">Submit</button>
             </div>
