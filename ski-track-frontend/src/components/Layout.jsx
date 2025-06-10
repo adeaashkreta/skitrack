@@ -87,7 +87,7 @@ const Layout = ({ children }) => {
                   to="/AboutUs"
                   className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
                 >
-                  AboutUs
+                  About
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -95,7 +95,7 @@ const Layout = ({ children }) => {
                   to="/ContactUs"
                   className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
                 >
-                  ContactUs
+                  Contact
                 </NavLink>
               </li>
               <li className="nav-item">
