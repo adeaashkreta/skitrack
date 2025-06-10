@@ -89,6 +89,18 @@ const nearbyResorts = [
 
 const ResortsPage = () => {
   const [filter, setFilter] = useState("all");
+  const [showModal, setShowModal] = useState(false);
+const [selectedResort, setSelectedResort] = useState(null);
+
+const openModal = (resortName) => {
+  setSelectedResort(resortName);
+  setShowModal(true);
+};
+
+const closeModal = () => {
+  setShowModal(false);
+  setSelectedResort(null);
+};
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -111,6 +123,108 @@ const ResortsPage = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const BookingModal = ({ show, onClose, resortName }) => {
+  const [formData, setFormData] = useState({
+    resortName: resortName,
+    checkInDate: "",
+    checkOutDate: "",
+    numberOfGuests: 1,
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    specialRequests: ""
+  });
+
+  useEffect(() => {
+    setFormData(prev => ({ ...prev, resortName }));
+  }, [resortName]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:3000/api/booking/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        alert("🎉 Booking successful!");
+        onClose(); // Close modal
+      } else {
+        alert("Booking failed: " + data.message);
+      }
+    } catch (err) {
+      alert("An error occurred: " + err.message);
+    }
+  };
+
+  if (!show) return null;
+
+
+
+
+  return (
+    <div className="modal fade show" style={{ display: "block", backgroundColor: "rgba(0,0,0,0.6)" }} tabIndex="-1" role="dialog">
+      <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div className="modal-content shadow rounded-4 border-0">
+          <form onSubmit={handleSubmit}>
+            <div className="modal-header border-0 pb-0">
+              <h4 className="modal-title fw-semibold text-primary">Book: {resortName}</h4>
+              <button type="button" className="btn-close" onClick={onClose}></button>
+            </div>
+            <div className="modal-body pt-0">
+              <div className="row g-3">
+                <div className="col-md-6">
+                  <label className="form-label">Check-in Date</label>
+                  <input type="date" className="form-control" name="checkInDate" onChange={handleChange} required />
+                </div>
+                <div className="col-md-6">
+                  <label className="form-label">Check-out Date</label>
+                  <input type="date" className="form-control" name="checkOutDate" onChange={handleChange} required />
+                </div>
+                <div className="col-md-6">
+                  <label className="form-label">Guests</label>
+                  <input type="number" className="form-control" name="numberOfGuests" min="1" onChange={handleChange} required />
+                </div>
+                <div className="col-md-6">
+                  <label className="form-label">Full Name</label>
+                  <input type="text" className="form-control" name="fullName" onChange={handleChange} required />
+                </div>
+                <div className="col-md-6">
+                  <label className="form-label">Email</label>
+                  <input type="email" className="form-control" name="email" onChange={handleChange} required />
+                </div>
+                <div className="col-md-6">
+                  <label className="form-label">Phone</label>
+                  <input type="text" className="form-control" name="phoneNumber" onChange={handleChange} />
+                </div>
+                <div className="col-12">
+                  <label className="form-label">Special Requests</label>
+                  <textarea className="form-control" rows="3" name="specialRequests" onChange={handleChange}></textarea>
+                </div>
+              </div>
+            </div>
+            <div className="modal-footer border-0">
+              <button type="button" className="btn btn-outline-secondary" onClick={onClose}>Cancel</button>
+              <button type="submit" className="btn btn-primary px-4">Confirm Booking</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
 
   return (
     <Layout>
@@ -186,7 +300,10 @@ const ResortsPage = () => {
                     <div className="mt-auto">
                       <div className="d-flex justify-content-between align-items-center mb-2">
                         <span className="price-tag">{resort.price}</span>
-                        <button className="btn btn-primary custom-hero-btn" >Book Now</button>
+                        <button
+                            className="btn btn-primary custom-hero-btn"
+                              onClick={() => openModal(resort.name)}>Book Now</button>
+
                       </div>
                       <div className="d-flex gap-3 mt-2 feature-icons">
                         <i className="fas fa-snowflake"></i>
@@ -325,6 +442,8 @@ const ResortsPage = () => {
       >
         <i className="fa fa-chevron-up"></i>
       </button>
+      <BookingModal show={showModal} onClose={closeModal} resortName={selectedResort} />
+
     </Layout>
   );
 };
