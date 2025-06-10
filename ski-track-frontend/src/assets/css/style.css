@@ -9,7 +9,6 @@
 
 /* General */
 body, html {
-  overflow-x: hidden;
   margin: 0; padding: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   background: var(--background);
@@ -26,6 +25,16 @@ body, html {
   margin: 0 auto;
   padding: 0 18px;
 }
+/* style.css */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Navbar */
 .navbar {
@@ -148,8 +157,8 @@ body, html {
 
 /* Top Resorts */
 .fullwidth-resorts {
-  width: 100%;
-  margin-left: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   background-color: #f8f9fa; /* Optional: match your site’s background */
   padding: 2rem 0;
 }
@@ -175,6 +184,15 @@ body, html {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+.custom-hero-btn {
+  background-color: #5bc0de !important;
+  border-color: #5bc0de !important;
+  color: white !important;
+}
+.custom-hero-btn:hover {
+  background-color: #31b0d5 !important;
+  border-color: #31b0d5 !important;
+}
 
 .top-resorts-container {
   max-width: 1400px;
@@ -268,9 +286,8 @@ body, html {
 
 .carousel-news {
   display: flex;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 100%;          /* Të zë gati krejt ekranin në desktop */
+  overflow: hidden;
+  width: 100vw;          /* Të zë gati krejt ekranin në desktop */
   max-width: 950px;      /* ose provoj 1100px për më të madh */
   min-height: 350px;     /* më i gjatë */
   position: relative;
@@ -441,7 +458,6 @@ body, html {
   font-weight: 700;
   font-size: 1.03em;
 }
-
 
 
 /* Newsletter */
@@ -727,7 +743,7 @@ body, html {
 }
   */
   .section-heading {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #2f436e;
     text-align: center;
@@ -980,7 +996,24 @@ footer {
   .footer-flex { flex-direction: column; gap: 7px;}
   .carousel-slide .slide-content { padding: 13px;}
 }
+.custom-subscribe-btn {
+  background-color: #5bc0de ;
+  border-color: #5bc0de ;
+  color: white ;
+}
 
+.custom-subscribe-btn:hover {
+  background-color: #31b0d5 ;
+  border-color: #31b0d5 ;
+}
+
+ .nav-link.active {
+  color:#5bc0de !important;
+}
+
+#searchIcon:hover i {
+  color: #2a416d!important;
+}
 /* A - Jon Additions */
 
 
@@ -1010,7 +1043,7 @@ footer {
       }
       #nearby-resorts-section .snowflake {
         position: absolute;
-        color: var(--accent, #0d6efd);
+        color: var(--accent,#5bc0de);
         opacity: 0.15;
         animation: float 14s linear infinite;
       }
@@ -1074,7 +1107,7 @@ footer {
 }
 .highlight-box {
   background-color: #fff;
-  border-left: 5px solid #007bff;
+  border-left: 5px solid #5bc0de;
   padding: 20px;
   margin-top: 40px;
   border-radius: 8px;

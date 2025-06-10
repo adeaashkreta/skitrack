@@ -144,7 +144,7 @@ const ResortsPage = () => {
           <div className="row g-4">
             {featuredResorts.map((resort) => (
               <div key={resort.id} className="col-lg-4 col-md-6">
-                <div className="card h-100">
+                <div className="card h-100 hover-lift">
                   <img
                     src={resort.img}
                     alt={resort.name}
@@ -186,7 +186,7 @@ const ResortsPage = () => {
                     <div className="mt-auto">
                       <div className="d-flex justify-content-between align-items-center mb-2">
                         <span className="price-tag">{resort.price}</span>
-                        <button className="btn btn-primary custom-hero-btn">Book Now</button>
+                        <button className="btn btn-primary custom-hero-btn" >Book Now</button>
                       </div>
                       <div className="d-flex gap-3 mt-2 feature-icons">
                         <i className="fas fa-snowflake"></i>

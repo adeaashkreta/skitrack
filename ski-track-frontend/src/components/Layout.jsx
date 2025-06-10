@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../assets/css/bootstrap.css';
 import '../assets/css/style.css';
 
@@ -25,20 +25,20 @@ const Layout = ({ children }) => {
           style={{ paddingLeft: '16px', paddingRight: '16px' }}
         >
           <div className="logo d-flex align-items-center">
-            <Link to="/">
+            <NavLink to="/">
               <img
                 src="/images/logo.png"
                 alt="Ski Track Logo"
                 className="img-fluid"
                 style={{ width: '80px', height: '80px' }}
               />
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/"
               style={{ textDecoration: 'none', color: 'inherit', marginLeft: '8px' }}
             >
               <span>Ski Track</span>
-            </Link>
+            </NavLink>
           </div>
 
           <button
@@ -59,34 +59,52 @@ const Layout = ({ children }) => {
           >
             <ul className="nav-links navbar-nav me-3">
               <li className="nav-item">
-                <Link className="nav-link active" to="/">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Resorts">
+                <NavLink
+                  to="/Resorts"
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                >
                   Resorts
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Weather">
+                <NavLink
+                  to="/Weather"
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                >
                   Weather
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/AboutUs">
-                  About
-                </Link>
+                <NavLink
+                  to="/AboutUs"
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                >
+                  AboutUs
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/ContactUs">
-                  Contact
-                </Link>
+                <NavLink
+                  to="/ContactUs"
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                >
+                  ContactUs
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Dashboard">
+                <NavLink
+                  to="/Dashboard"
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                >
                   Dashboard
-                </Link>
+                </NavLink>
               </li>
             </ul>
 
@@ -108,14 +126,14 @@ const Layout = ({ children }) => {
 
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link
-                  className="nav-link text-white"
+                <NavLink
                   to="/login"
+                  className={({ isActive }) => `nav-link text-white${isActive ? ' active' : ''}`}
                   id="profileIcon"
                   title="Profile"
                 >
                   <i className="fa fa-user"></i>
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
