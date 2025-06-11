@@ -1,11 +1,9 @@
 import React from 'react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../assets/css/bootstrap.css';
 import '../assets/css/style.css';
 
 const Layout = ({ children }) => {
-  const navigate = useNavigate();
-
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
     alert('Thank you for subscribing!');
@@ -14,17 +12,6 @@ const Layout = ({ children }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const handleLogout = () => {
-    // Clear user data from localStorage on logout
-    localStorage.removeItem('token');
-    localStorage.removeItem('role');
-    localStorage.removeItem('email');
-    navigate('/login');
-  };
-
-  const userRole = localStorage.getItem('role');
-  const isLoggedIn = !!userRole;
 
   return (
     <>
@@ -111,18 +98,14 @@ const Layout = ({ children }) => {
                   Contact
                 </NavLink>
               </li>
-
-              {/* Show Dashboard only for admin */}
-              {userRole === 'admin' && (
-                <li className="nav-item">
-                  <NavLink
-                    to="/Dashboard"
-                    className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  >
-                    Dashboard
-                  </NavLink>
-                </li>
-              )}
+              <li className="nav-item">
+                <NavLink
+                  to="/Dashboard"
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                >
+                  Dashboard
+                </NavLink>
+              </li>
             </ul>
 
             <form className="d-flex me-2">
@@ -143,26 +126,14 @@ const Layout = ({ children }) => {
 
             <ul className="navbar-nav">
               <li className="nav-item">
-                {/* Conditionally show Login or Logout */}
-                {isLoggedIn ? (
-                  <button
-                    onClick={handleLogout}
-                    className="nav-link btn btn-link text-white"
-                    style={{ cursor: 'pointer' }}
-                    title="Logout"
-                  >
-                    Logout
-                  </button>
-                ) : (
-                  <NavLink
-                    to="/login"
-                    className={({ isActive }) => `nav-link text-white${isActive ? ' active' : ''}`}
-                    id="profileIcon"
-                    title="Login"
-                  >
-                    <i className="fa fa-user"></i>
-                  </NavLink>
-                )}
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) => `nav-link text-white${isActive ? ' active' : ''}`}
+                  id="profileIcon"
+                  title="Profile"
+                >
+                  <i className="fa fa-user"></i>
+                </NavLink>
               </li>
             </ul>
           </div>
