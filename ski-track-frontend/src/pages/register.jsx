@@ -72,7 +72,8 @@ const Register = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await api.post('/users/register', formData);
+     const response = await api.post('/auth/register', formData);
+
 
       alert('Registration successful! Please log in.');
       navigate('/login');
