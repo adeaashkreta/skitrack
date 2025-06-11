@@ -1,0 +1,156 @@
+/* Container */
+.usertable-container {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+/* Table Styles */
+.usertable-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.usertable-th {
+  background-color: #5bc0de;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;
+  overflow: hidden;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 200px;
+  border-right: 1px solid white;
+}
+
+.usertable-th:last-child {
+  border-right: none;
+}
+
+.usertable-td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+  overflow: hidden;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+
+.usertable-tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.usertable-tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.usertable-tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Button Styles */
+.usertable-button-add {
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 10px;
+}
+
+.usertable-button-add:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.usertable-button-update,
+.usertable-button-delete {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.usertable-button-update:hover,
+.usertable-button-delete:hover {
+  background-color: #0056b3;
+}
+
+/* Button Container */
+.usertable-button-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Box Add */
+.usertable-box-add {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .usertable-button-add {
+    font-size: 10px;
+    padding: 10px 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .usertable-table {
+    padding: 15px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .usertable-td,
+  .usertable-th {
+    padding: 5px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .usertable-table {
+    padding: 15px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .usertable-td,
+  .usertable-th {
+    padding: 5px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Reset and Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}

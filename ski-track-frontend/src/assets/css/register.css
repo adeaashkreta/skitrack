@@ -1,0 +1,86 @@
+/* Container for the register page */
+.register-container {
+  min-height: 100vh;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Box for the form */
+.register-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+/* Form group spacing */
+.register-form-group {
+  margin-bottom: 16px;
+}
+
+/* Labels styling */
+.register-form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+/* Inputs styling */
+.register-form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Error messages */
+.register-error-message {
+  color: #d9534f;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* Error input border */
+.register-input-error {
+  border-color: #d9534f;
+}
+
+/* Submit button styling */
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background: #2f436e;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.register-btn:hover {
+  background: #1d2c48;
+}
+
+/* Link to login text */
+.register-login-text {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.95rem;
+}
+
+.register-login-text a {
+  color: #2f436e;
+  text-decoration: underline;
+}
+
+.register-login-text a:hover {
+  color: #1d2c48;
+}
